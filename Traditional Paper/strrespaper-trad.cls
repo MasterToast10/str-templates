@@ -9,7 +9,6 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
-\RequirePackage{xparse}
 \RequirePackage{ifmtarg}
 \RequirePackage{titlesec, titletoc, tocloft}
 \RequirePackage[linktoc=all]{hyperref}
@@ -28,6 +27,7 @@
 
 \newcommand{\tptitle}{RESEARCH TITLE}
 \newcommand{\dayofmonth}{13} % \date token is built-in
+\author{}
 \newcommand{\adviser}{Adviser C. Adviser}
 \newcommand{\level}{3}
 
@@ -248,16 +248,17 @@
 }
 
 \makeatletter
+
 \newtoks\author@toks\newcounter{author@counter}%
 \setcounter{author@counter}{0}%
 \newcommand{\addAuthor}[1]{%
 	\ifnum\theauthor@counter>0\author@toks=\expandafter{\the\author@toks\@elt\relax #1}%
 	\else\author@toks=\expandafter{\the\author@toks\@author{#1}}%
 	\fi\stepcounter{author@counter}%
-	}
+}
 
-	\newcounter{dummycounter}
-	\newcommand{\printauthors}{%
+\newcounter{dummycounter}
+\newcommand{\printauthors}{%
 	\begingroup
 	\setcounter{dummycounter}{0}%
 	\def\@elt##1{%
