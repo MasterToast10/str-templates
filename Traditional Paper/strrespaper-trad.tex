@@ -1,0 +1,362 @@
+\documentclass{strrespaper-trad}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+
+% For better tables
+\usepackage{booktabs}
+
+% For subfigures
+\usepackage{subfig}
+
+% For landscape pages
+\usepackage{pdflscape}
+
+% For drawing
+\usepackage{tikz}
+\usetikzlibrary{shapes.multipart}
+
+% For Project Plan
+\usepackage{pgfgantt}
+\usepackage{tabularx}
+
+% For code listings (type "texdoc listings" [without the quotes] for more information)
+\usepackage{listings}
+
+% For species names (type "texdoc biocon" [without the quotes] for more information)
+\usepackage{biocon}
+\newplant{At}{genus=Arabidopsis,epithet=thaliana,author=Heynh.,oldauthor=L.}
+\newbact{ecoli}{genus=Escherichia, epithet=coli}
+
+% Feel free to remove once your remove all the dummy text
+\usepackage{lipsum} 
+
+% Required for the citations
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\addbibresource{../sample/bibliographies/str.bib} % Add your BibLaTeX files here
+
+ 
+\title{RESEARCH PROJECT TITLE} % Put your proper title here
+\dayofmonth{13} % Depends on prof
+\date{May 2019} % Also depends on prof
+
+\tptitle{RESEARCH PROJECT TITLE \\
+	(UPPERCASE except for Scientific names, FONT – TIMES NEW ROMAN, SIZE 12; \\
+	AT THE CENTER, INVERTED PYRAMID)
+} % Format this to make it the title an inverted pyramid
+\resone{Researcher D. One} % Names in alphabetical order (First M.I. Family Name)
+\restwo{A\~na B. Two}
+\resthree{Scholar N. Bayan}
+\adviser{Adviser C. Adviser} % Name of adviser
+\level{3} % STR Year Level
+ 
+
+\begin{document}
+	\maketitle
+
+	\makeapprovalsheet
+
+	\makeacknowledgement{
+        We would like to thank everyone included in the study for their time and effort. Without them, this research would not be successful.
+    }
+
+	\makeabstract{
+        \lipsum[1-2]
+    }
+
+    \contents
+    \listoflistings
+
+	\mainmatter
+
+	\section{INTRODUCTION}
+		\subsection{Background of the Study}
+            \lipsum[1]
+
+		\subsection{Objectives of the Study}
+			\subsubsection{General Objective}
+				\begin{itemize}
+					\item This is a general objective that's supposed to describe exactly what your research will do. (Filler text is nice)
+				\end{itemize}
+			\subsubsection{Specific Objectives}
+				\begin{enumerate}
+					\item Specific
+					\item Another specific
+					\item Some specific
+				\end{enumerate}
+
+		\subsection{Significance of the Study}
+            \lipsum[2]
+            
+            Random paragraph for \plant{At}. \plant[e]{At} is a plant. \plant{At} is composed of plant stuff.
+
+            Random paragraph for \bact{ecoli}. \bact{ecoli} is a form of bacteria. \bact{ecoli} is made of bacteria stuff. (Random listing shown in Listing~\ref{lst:game.py})
+
+		\subsection{Scope and Limitations of the Study}
+			\lipsum[4]
+
+    \definitionofterms{}
+        \termdef{Banana}{
+            I am putting this as senseless text. This is not a definition. Absolutely nothing here makes sense, and that's completely the point.
+        }
+        \termdef{Definition}{
+            something you place here in the Definition of Terms to clarify your paper
+        }
+
+	\section{REVIEW OF RELATED LITERATURE}
+        \paragraph{Vestibulum}
+			\lipsum[5-9]
+        
+        Random line for \bact[f]{ecoli}.
+
+	\section{MATERIALS AND METHODS}
+		\subsection{Research Design}
+			\lipsum[10]
+
+		\subsection{Locale of the Study}
+			\textcite{letcher_wind_2017} states the following: \lipsum[11].
+
+		\subsection{Materials and Research Instruments}
+			\lipsum[12]
+
+		\subsection{Procedures}
+			\lipsum[13]
+
+		\subsection{Treatment of Data}
+			\subsubsection{Statement of Hypotheses} \vspace{-2em}
+				\begin{align*}
+					H_0: & \mu = 50 \\
+					H_a: & \mu > 50
+				\end{align*}
+			\subsubsection{Analysis of Data}
+				\lipsum[4]
+
+	\section{RESULTS AND DISCUSSION}
+		\paragraph{Results}
+			\lipsum[13]
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[width=1\linewidth]{../sample/graphics/anonymous.png}
+				\caption[Anonymous]{Anonymous}
+				\label{fig:anonymous}
+			\end{figure}
+
+			\lipsum[15]
+
+			\begin{table}[ht]
+				\centering
+				\caption[Sample Table]{Sample Table}
+				\begin{tabular}{cccc}
+					\toprule
+					foo & bar & yeet & skeet \\
+					\midrule
+					1   & 12  & 122  & 11    \\
+					3   & 4   & 11   & 33    \\
+					\bottomrule
+				\end{tabular}
+				\label{tab:sampletable}
+			\end{table}
+
+			\lipsum[14]
+
+			\begin{eqnarray}
+				E = mc^2 \label{eq:meeq} \\
+				Yeet \label{eq:yeet}
+			\end{eqnarray}
+
+			The solution to Equation~\ref{eq:meeq} is Equation~\ref{eq:yeet} and is shown in Figure~\ref{fig:anonymous} and Table~\ref{tab:sampletable} \autocite{al-shemmeri_wind_2010}
+
+	\section{CONCLUSION AND RECOMMENDATIONS}
+		\lipsum[2-4]
+
+	\literaturecited{}
+
+    \appendix
+    
+    \section{PROJECT PLAN}
+    \begin{table}[htbp]
+        \centering
+        \caption{Task Lists and Duration}
+        \label{tab:task_lists_duration}
+        \begin{tabularx}{\linewidth}{cXcc}
+            \toprule
+            Task & Task Description                                                      & Preceding Tasks & Duration (in days) \\
+            \midrule
+            A    & Development of Warzone Game Platform and Implementation of Algorithms & ---             & 30                 \\
+            B    & Testing, Refinement and Optimization of Implemented Programs          & A               & 31                 \\
+            C    & Data Collection                                                       & B               & 60                 \\
+            D    & Data Analysis                                                         & C               & 60                 \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+
+    \begin{figure}[htbp]
+        \centering
+        \newcommand{\netchart}[8]{
+            \node
+            [rectangle split,
+                rectangle split parts = 3,
+                draw,
+                minimum width = 3cm,
+                font = \small,
+                rectangle split part align = {center}
+            ] (#8)
+            {
+                \centering
+                \begin{tabularx}{2.75cm}{@{} >{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X @{}}
+                    #1 & #2 & #3 \\
+                \end{tabularx}
+                \nodepart{two}
+                #4
+                \nodepart{three}
+                \begin{tabularx}{2.75cm}{@{} >{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X @{}}
+                    #5 & #6 & #7 \\
+                \end{tabularx}
+            };
+        }
+        \newcommand{\nchconnect}[2]{\draw[->] (#1.two east) to [out=0, in=180] (#2.two west);}
+        \tikzset{
+            block/.style={
+                    rectangle,
+                    draw,
+                    minimum height=4em,
+                    minimum width=4em,
+                    text depth=1em,
+                    outer sep=0pt,
+                    font=\small
+                }
+        }
+        % !!! Disclaimer: shift distances are exaggerated to demonstrate functionality for more complex networks e.g. multiple threads. If your flow is linear, simply omit the yshift components
+        \begin{tikzpicture}
+            \netchart{0}{30}{30} {Task A} {0}{30}{30} {tA}
+            \begin{scope}[xshift=4cm]
+                \begin{scope}[yshift=2cm]
+                    \netchart{30}{31}{61} {Task B} {30}{31}{61} {tB}
+                    \begin{scope}[xshift=4cm, yshift=-4cm]
+                        \netchart{61}{60}{121} {Task C} {61}{60}{121} {tC}
+                    \end{scope}
+                \end{scope}
+                \begin{scope}[xshift=8cm]
+                    \netchart{121}{60}{181} {Task D} {121}{60}{181} {tD}
+                \end{scope}
+            \end{scope}
+            \nchconnect{tA}{tB}
+            \nchconnect{tB}{tC}
+            \nchconnect{tC}{tD}
+        \end{tikzpicture}
+        \caption{Network Chart}
+        \label{fig:network_chart}
+    \end{figure}
+
+
+    \begin{landscape}
+        \newpage
+        \newcommand{\tsmpap}[8]{\makecell{#1} & #2 & \makecell{#3} & \makecell{#4} & \makecell{#5} & \makecell{#6} & \makecell{#7} & \makecell{#8} \\}
+        \newenvironment{TSMPAP}{\tabularx{\linewidth}{cXcccccc}}{\endtabularx}
+        \begin{table}[ht]
+            \centering
+            \caption{Task Schedule Management and Personnel Assignment Plan}
+            \label{tab:task_schedule_personnel_assignment}
+            \begin{tabular}{cccccccc}
+                \toprule
+                Task & Task Description           & Personnel                  & Duration (in days) & EST                        & LST                        & ECT                        & LCT                        \\
+                \midrule
+                A    & \begin{tabular}{c} Development of Warzone Game Platform and \\ Implementation of Algorithms \end{tabular} & \begin{tabular}{c}All\\Personnel\end{tabular} & 30                 & \begin{tabular}{c} NOV\\01\\2019 \end{tabular} & \begin{tabular}{c} NOV\\30\\2019 \end{tabular} & \begin{tabular}{c} NOV\\01\\2019 \end{tabular} & \begin{tabular}{c} NOV\\30\\2019 \end{tabular} \\
+                B    & \begin{tabular}{c} Testing, Refinement and Optimization \\ of Implemented Programs \end{tabular} & \begin{tabular}{c}All\\Personnel\end{tabular} & 31                 & \begin{tabular}{c} DEC\\01\\2019 \end{tabular} & \begin{tabular}{c} DEC\\31\\2019 \end{tabular} & \begin{tabular}{c} DEC\\01\\2019 \end{tabular} & \begin{tabular}{c} DEC\\31\\2019 \end{tabular} \\
+                C    & Data Collection            & \begin{tabular}{c}All\\Personnel\end{tabular} & 60                 & \begin{tabular}{c} JAN\\01\\2019 \end{tabular} & \begin{tabular}{c} FEB\\29\\2019 \end{tabular} & \begin{tabular}{c} JAN\\01\\2019 \end{tabular} & \begin{tabular}{c} FEB\\29\\2019 \end{tabular} \\
+                D    & Data Analysis              & \begin{tabular}{c}All\\Personnel\end{tabular} & 61                 & \begin{tabular}{c} MAR\\01\\2019 \end{tabular} & \begin{tabular}{c} APR\\31\\2019 \end{tabular} & \begin{tabular}{c} MAR\\01\\2019 \end{tabular} & \begin{tabular}{c} APR\\31\\2019 \end{tabular} \\
+                \bottomrule
+            \end{tabular}
+        \end{table} \newpage
+
+        \newcommand{\mesp}[6]{#1 & \makecell{#2} & \makecell{#3} & \makecell{#4} & \makecell{#5} & \makecell{#6} \\}
+        \newenvironment{MESP}{\tabularx{\linewidth}{Xccccc}}{\endtabularx}
+        \begin{table}[htbp]
+            \centering
+            \caption{Material and Equipment Sourcing Plan}
+            \label{tab:material_equipment_sourcing}
+            \begin{tabular}{cccccc}
+                \toprule
+                Protocol                     & Date/s Needed    & Unit & Materials Needed         & Potential Source & Remarks \\
+                \midrule
+                \begin{tabular}{c} Development of Warzone Game Platform \\ and Implementation of Algorithm \end{tabular}   & NOV-01 to 30     & 1    & Laptop with Python       & From Home        & On Hand \\
+                \begin{tabular}{c} Testing, Refinement and Optimization \\ of Implemented Programs \end{tabular}   & DEC-01 to 31     & 1    & Laptop with Python       & From Home        & On Hand \\
+                Data Collection and Analysis & JAN-01 to APR-31 & 1    & Laptop with Python and R & From Home        & On Hand \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+
+        \begin{table}[htbp]
+            \centering
+            \caption{Risk Management Plan}
+            \label{tab:risk_management}
+            \begin{tabularx}{\textwidth}{cc}
+                \toprule
+                Risk                                  & Safety Measure/Protocol                     \\
+                \midrule
+                Development of Carpal Tunnel Syndrome & Frequent 5-minute breaks to relieve muscles \\
+                Electrocution                         & Proper usage of electronic devices          \\
+                Loss of data                          & Data upload into the cloud                  \\
+                Proprietary software trial expiry     & Use of free and open-source software        \\
+                \bottomrule
+            \end{tabularx}
+        \end{table}
+    \end{landscape}
+
+    \section{RAW DATA}
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{cc}
+            \toprule
+            Random & Bits \\
+            \midrule
+            of & data \\
+            \bottomrule
+        \end{tabular}
+        \caption{Random Table}
+        \label{tab:random}
+    \end{table}
+    \lstset{language=Python, breaklines=true, numbers=left, stringstyle=\ttfamily\small, basicstyle=\singlespacing}
+    
+    \lstinputlisting[caption={game.py}, label={lst:game.py}]{../sample/code/game.py}
+
+    \section{STATISTICAL TABLES}
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{lccc}
+            \toprule
+            Aspect           & Human & Fish & Bacterium \\
+            \midrule
+            opposable thumbs & 1     & 0    & 0         \\
+            wings            & 0     & 0    & 0         \\
+            gills            & 0     & 1    & 0         \\
+            eyes             & 1     & 1    & 0         \\
+            requires oxygen  & 1     & 1    & 1         \\
+            \bottomrule
+        \end{tabular}
+        \caption{Example of Organisms Sorted Through a Classifier System}
+        \label{tab:ex_classifier}
+    \end{table}
+
+	\section{DOCUMENTATION}
+		\begin{figure}[htbp]
+			\centering
+			\subfloat[We]{
+                \includegraphics[width=0.45\linewidth]{../sample/graphics/anonymous.png}
+            } \qquad 
+            \subfloat[Are]{
+                \includegraphics[width=0.45\linewidth]{../sample/graphics/anonymous.png}
+            } 
+
+            \quad
+
+			\subfloat[Watching]{
+                \includegraphics[width=0.45\linewidth]{../sample/graphics/anonymous.png}
+            } \qquad 
+            \subfloat[You]{
+                \includegraphics[width=0.45\linewidth]{../sample/graphics/anonymous.png}
+            }
+			\caption{We Are Watching}
+			\label{fig:waw}
+		\end{figure}
+\end{document}
