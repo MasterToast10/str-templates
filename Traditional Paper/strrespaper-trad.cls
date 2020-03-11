@@ -11,7 +11,7 @@
 \RequirePackage{setspace}
 \RequirePackage{ifmtarg}
 \RequirePackage{titlesec, titletoc, tocloft}
-\RequirePackage[linktoc=all]{hyperref}
+\RequirePackage{hyperref}
 
 \hypersetup{
 	colorlinks=true,
