@@ -23,25 +23,15 @@
 	urlcolor=black
 }
 
-\DeclareDocumentCommand{\resnames}{m o o}{
-	\makeatletter
-	#1{\IfValueT{#2}{\@ifmtarg{#2}{}{\IfValueT{#3}{\@ifmtarg{#3}{ and #2}{, #2 and #3}}}}}
-	\makeatother
-}
-
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
 \newcommand{\tptitle}{RESEARCH TITLE}
 \newcommand{\dayofmonth}{13} % \date token is built-in
-\newcommand{\resone}{Researcher Bigboy D. One}
-\newcommand{\restwo}{Student A\~na B. Two}
-\newcommand{\resthree}{Scholar N. Bayan}
 \newcommand{\adviser}{Adviser C. Adviser}
 \newcommand{\level}{3}
 
 \newtoks\tptitle \newtoks\dayofmonth
-\newtoks\resone \newtoks\restwo \newtoks\resthree
 \newtoks\adviser
 \newtoks\level
 
@@ -146,13 +136,9 @@
 		
 		\vspace*{10\baselineskip}
 		
-		\MakeUppercase{\the\resone}\\
-		\MakeUppercase{\the\restwo}\\
-		\MakeUppercase{\the\resthree}\\
+		\tpauthors
 		
-		\vspace*{10\baselineskip}\renewcommand{\listfigurename}{\normalsize\underline{Figure No.}\hfill
-			\underline{Caption}\hfill
-			\underline{Page}}
+		\vfill
 		
 		\@date
 	\end{center}
@@ -167,7 +153,7 @@
 		% \addcontentsline{toc}{section}{APPROVAL SHEET}
 		{\bf APPROVAL SHEET}
 	\end{center}
-	\par In \hfill fulfillment \hfill of \hfill the \hfill requirements \hfill in \hfill Science, \hfill Technology, \hfill Engineering \hfill and \\ Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by \resnames{\the\resone}[\the\restwo][\the\resthree] on \the\dayofmonth~\@date
+	\par In \hfill fulfillment \hfill of \hfill the \hfill requirements \hfill in \hfill Science, \hfill Technology, \hfill Engineering \hfill and \\ Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
 	\vspace*{3\baselineskip}
 	
@@ -227,7 +213,7 @@
 \newcommand{\makeabstract}[1]{
 	\addcontentsline{toc}{section}{ABSTRACT}	
 	\section*{Abstract}
-	\noindent{\bfseries \resnames{\the\resone}[\the\restwo][\the\resthree]}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
+	\noindent{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
 	\vspace*{2\baselineskip}\\
 	Adviser: {\bf \the\adviser}	
 	\\
@@ -260,3 +246,37 @@
 		\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\thesection}{0pt}{\MakeUppercase}
 		\titlespacing{\section}{0pt}{12pt}{0pt}
 }
+
+\makeatletter
+\newtoks\author@toks\newcounter{author@counter}%
+\setcounter{author@counter}{0}%
+\newcommand{\addAuthor}[1]{%
+	\ifnum\theauthor@counter>0\author@toks=\expandafter{\the\author@toks\@elt\relax #1}%
+	\else\author@toks=\expandafter{\the\author@toks\@author{#1}}%
+	\fi\stepcounter{author@counter}%
+	}
+
+	\newcounter{dummycounter}
+	\newcommand{\printauthors}{%
+	\begingroup
+	\setcounter{dummycounter}{0}%
+	\def\@elt##1{%
+	\ifnum\c@dummycounter < \numexpr\c@author@counter - 2\relax%
+	, 
+	\else
+	{ and }%
+	\fi
+	\stepcounter{dummycounter}%
+	}
+	\the\author@toks%
+	\endgroup
+}
+
+\newcommand{\tpauthors}{%
+	\begingroup
+	\def\@elt##1{\\}%
+	\MakeUppercase{\the\author@toks}%
+	\endgroup
+}
+
+\makeatother
