@@ -2,6 +2,10 @@
 All LaTeX templates in Research for PSHS-CARC
 
 ## My Setup
+### TeXLive
+Contains every package the template could ever have a dependency on. 
+**DISCLAIMER: Haven't tested yet on other distributions of LaTeX**
+
 ### Visual Studio Code
 #### LaTeX Editing
  - LaTeX Workshop by James Yu (Build on Save as well as code snippets and code linting)
