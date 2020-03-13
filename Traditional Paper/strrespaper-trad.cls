@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{strrespaper-trad}[2020/03/11 Traditional Paper Template for Science, Technology, Engineering, and Mathematics Research]
+\ProvidesClass{strrespaper-trad}[2020/03/13 Traditional Paper Template for Science, Technology, Engineering, and Mathematics Research]
 % Copyright (C) 2020  Vash Ancheta
 
 % This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,6 @@
 \LoadClass[12pt]{article}
 \RequirePackage{newtxtext,newtxmath}
 \RequirePackage[letterpaper, margin=1in, left=1.5in]{geometry}
-\RequirePackage{graphicx}
 \RequirePackage{fancyhdr}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
