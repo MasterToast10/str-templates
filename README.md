@@ -1,6 +1,12 @@
 # str-templates
 All LaTeX templates in Research for PSHS-CARC
 
+Although these templates were designed with use within PSHS-CARC in mind, it is suggested that other campuses localize the template for their own ease of use, or use as is. I am well aware that LaTeX does have a learning curve, so this might seem unappealing to others, but I still recommend using the LaTeX, a source control management (SCM) system like git and another bibliography management system for a more content-focused method of paper-writing with no worries of data loss or lack of collaboration.
+
+I have a personal setup, with VSCode and Zotero, however you are free to use whatever setup you are comfortable with.
+
+Thank you.
+
 ## Personal Setup
 ### TeXLive
 Contains every package the template could ever have a dependency on. 
@@ -10,6 +16,7 @@ Contains every package the template could ever have a dependency on.
 **DISCLAIMER: Haven't tested the templates yet on other distributions of LaTeX**
 
 ### Visual Studio Code
+[Download the latest version of VS Code here](https://code.visualstudio.com/)
 #### LaTeX Editing
  - [LaTeX Workshop by James Yu](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (Build on Save as well as code snippets and code linting)
  - [LaTeX Utilities by tecosaur](https://marketplace.visualstudio.com/items?itemName=tecosaur.latex-utilities) (Formatted pastes and Zotero citation management)
