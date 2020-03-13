@@ -24,3 +24,4 @@ Reference Management Platform with Collaborative Features
 The comments are there on the .tex file to guide you. You may omit code that serve a purpose that is not necessary in your field.
 
 ## Journal Paper
+The comments are there on the .tex file to guide you. For more complex LaTeX, refer to the Traditional Template for useful code snippets.
