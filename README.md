@@ -1,7 +1,7 @@
 # str-templates
 All LaTeX templates in Research for PSHS-CARC
 
-Although these templates were designed with use within PSHS-CARC in mind, it is suggested that other campuses localize the template for their own ease of use, or use as is. I am well aware that LaTeX does have a learning curve, so this might seem unappealing to others, but I still recommend using the LaTeX, a source control management (SCM) system like git and another bibliographical reference management system for a more content-focused method of paper-writing with no worries of data loss or lack of collaboration.
+Although these templates were designed with use within PSHS-CARC in mind, it is suggested that other campuses localize the template for their own ease of use, or use as is. I am well aware that LaTeX does have a learning curve, so this might seem unappealing to others, but I still recommend using the LaTeX, a source control management (SCM) system like git and a bibliographical reference management system for a more content-focused method of paper-writing with no worries of data loss or lack of collaboration.
 
 I have a personal setup, with VSCode and Zotero, however you are free to use whatever setup you are comfortable with.
 
