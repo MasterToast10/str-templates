@@ -33,7 +33,8 @@ Use git and github for SCM (VS Code has natural support)
 ### Zotero
 Reference Management Platform with Collaborative Features
  - Extensions for Browsers (e.g. Google Chrome and Mozilla Firefox)
- - Better Bibtex (Synchronize .bib file with Zotero Data)
+ - Cloud storage of references and corresponding saved copies of each reference
+ - [Better Bibtex](https://retorque.re/zotero-better-bibtex/) (Synchronize .bib file with Zotero Data)
  
  [Download the latest version of Zotero here](https://www.zotero.org/)
 
