@@ -36,7 +36,7 @@
 	urlcolor=black
 }
 
-\RequirePackage{caption}
+\RequirePackage[font=normalsize]{caption}
 
 \captionsetup[table]{
     textfont=it,
@@ -78,7 +78,8 @@
         Corresponding Author Email: \href{mailto:\the\email}{\textcolor{blue}{\underline{\the\email}}}\\\vspace{2\baselineskip}
         \begin{adjustwidth}{0.55in}{0.55in}
             \section{Abstract}
-            \justify\the\abstract
+            \vspace{0.35em}
+            \the\abstract
         \end{adjustwidth}
         \textit{Keywords:} \the\keywords\vspace{2.5\baselineskip}
     }]
