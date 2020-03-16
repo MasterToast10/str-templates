@@ -51,8 +51,11 @@
 
 \pagestyle{fancy}
 \fancyhf{}\renewcommand{\headrulewidth}{0pt}
-\lhead{\MakeUppercase{\@title}}
 \rfoot{\fontsize{12}{\baselineskip}\selectfont\thepage\fontsize{10}{\baselineskip}\selectfont}
+
+\newcommand{\runningHead}[1]{
+    \lhead{\MakeUppercase{#1}}
+}
 
 \setlength{\parskip}{0.5\baselineskip}
 
