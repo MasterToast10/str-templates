@@ -28,6 +28,7 @@ Contains every package the template could ever have a dependency on.
  - [LTeX by Julian Valentin](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex) (Grammar Check) **Note: You need to install extensions for languages you require**
 #### Source Control Management
 Use git and github for SCM (VS Code has natural support)
+ - [git SCM](https://git-scm.com/downloads) (Backbone of the system) 
  - [Git Graph by mhutchie](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (Visualize commits and changes)
 
 ### Zotero
