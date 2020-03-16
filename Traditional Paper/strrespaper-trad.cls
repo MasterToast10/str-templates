@@ -213,11 +213,11 @@
 	\end{center}
 }
 
-\newcommand{\makeacknowledgement}[1]{
+\newcommand{\makeacknowledgment}[1]{
 	\begin{center}
 		% \phantomsection
-		% \addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
-		{\bf ACKNOWLEDGEMENT}
+		% \addcontentsline{toc}{section}{ACKNOWLEDGMENT}
+		{\bf ACKNOWLEDGMENT}
 	\end{center}
 	\vspace*{-3 \baselineskip}
 	\paragraph{}#1
