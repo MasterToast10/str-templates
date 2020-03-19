@@ -19,6 +19,7 @@
 
 \LoadClass[10pt]{article}
 \RequirePackage{newtxtext,newtxmath}
+\RequirePackage{microtype}
 \RequirePackage[letterpaper, margin=1in, left=1.75cm, right=1.75cm]{geometry}
 \RequirePackage{xcolor}
 \RequirePackage{ragged2e}
@@ -35,6 +36,14 @@
 	linkcolor=black,
 	urlcolor=black
 }
+
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+  \do\Y\do\Z}
 
 \RequirePackage[font=normalsize]{caption}
 

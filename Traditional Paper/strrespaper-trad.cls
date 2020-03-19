@@ -19,12 +19,14 @@
 
 \LoadClass[12pt]{article}
 \RequirePackage{newtxtext,newtxmath}
+\RequirePackage{microtype}
 \RequirePackage[letterpaper, margin=1in, left=1.5in]{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
 \RequirePackage{ifmtarg}
 \RequirePackage{titlesec, titletoc, tocloft}
+
 \RequirePackage{hyperref}
 
 \hypersetup{
@@ -35,6 +37,14 @@
 	linkcolor=black,
 	urlcolor=black
 }
+
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+  \do\Y\do\Z}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -59,7 +69,7 @@
 \newcommand{\contents}{
 	\setcounter{tocdepth}{2}
 	\cftsetindents{section}{0em}{7em}
-	\cftsetindents{subsection}{3em}{0em}
+	\cftsetindents{subsection}{2em}{0em}
 	
 	\renewcommand{\cfttoctitlefont}{\normalsize\bf}
 	\renewcommand{\cftloftitlefont}{\normalsize\bf Figure \hfill\hspace{-1.15em}}
@@ -71,28 +81,22 @@
 	\renewcommand{\cftafterlottitle}{\hfill\bf Page \hspace{-1.15em}}
 	
 	\renewcommand\cftsecaftersnum{:}	
-	\begin{center}
-		{\bf TABLE OF CONTENTS}
-	\end{center}
-	\tableofcontents
+	\section*{Table of Contents}
+	\vspace{-1.5\baselineskip}\tableofcontents
 	\thispagestyle{fancy}
 	\newpage
 	
-	\begin{center}
-		\phantomsection
-		\addcontentsline{toc}{section}{List of Figures}
-		{\bf LIST OF FIGURES}
-	\end{center}
-	\listoffigures
+	\phantomsection
+	\addcontentsline{toc}{section}{List of Figures}
+	\section*{List of Figures}
+	\vspace{-\baselineskip}\listoffigures
 	\thispagestyle{fancy}
 	\newpage
 	
-	\begin{center}
-		\phantomsection
-		\addcontentsline{toc}{section}{List of Tables}
-		{\bf LIST OF TABLES}
-	\end{center}
-	\listoftables
+	\phantomsection
+	\addcontentsline{toc}{section}{List of Tables}
+	\section*{List of Tables}
+	\vspace{-\baselineskip}\listoftables
 	\thispagestyle{fancy}
 	\newpage
 }
@@ -102,37 +106,33 @@
         \normalsize\bf Listing \hfill \hspace{-1em} Title \hfill Page \hspace{-1em}
     }    
 
-    \begin{center}
-		\phantomsection
-		\addcontentsline{toc}{section}{List of Listings}
-		{\bf LIST OF LISTINGS}
-	\end{center}
-    \lstlistoflistings
+    \phantomsection
+	\addcontentsline{toc}{section}{List of Listings}
+	\section*{List of Listings}
+    \vspace{-\baselineskip}\lstlistoflistings
     \thispagestyle{fancy}
     \newpage
 }
 
 \newcommand{\mainmatter}{\pagenumbering{arabic} \doublespace}
 
-\newcommand{\termdef}[2]{
-    \par \hangindent=1em \hangafter=1 \noindent  
-    \textbf{#1}\hspace{2\wordsep}--\hspace{2\wordsep}#2
-}
-
 \newcommand{\sectionbreak}{\clearpage}
 
 \newcommand{\initheaders}{
     \titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
-	\titlespacing{\section}{0pt}{12pt}{1.5\baselineskip}
+	\titlespacing{\section}{0pt}{0pt}{0.5\baselineskip}
 
 	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{-\baselineskip}{}
-	\titlespacing{\subsection}{0pt}{\baselineskip}{0pt}
+	\titlespacing{\subsection}{0pt}{0.5\baselineskip}{0pt}
 	
-	\titleformat{\subsubsection}{\itshape \singlespacing}{}{1em}{}
-	\titlespacing{\subsubsection}{0pt}{0pt}{6pt}
+	\titleformat{\subsubsection}{\itshape \singlespacing}{}{0pt}{}
+	\titlespacing{\subsubsection}{0.5em}{0pt}{6pt}
 
-	\titleformat{\paragraph}[display]{\bfseries \singlespacing}{}{\baselineskip}{}
-	\titlespacing{\paragraph}{0pt}{\baselineskip}{0pt}
+	\titleformat{\paragraph}[display]{\bfseries \singlespacing}{}{-\baselineskip}{}
+	\titlespacing{\paragraph}{0pt}{0.5\baselineskip}{0pt}
+
+	\titleformat{\subparagraph}{\itshape \singlespacing}{}{0pt}{}
+	\titlespacing{\subparagraph}{0.5em}{0pt}{6pt}
 }
 
 \renewcommand{\maketitle}{
@@ -162,12 +162,10 @@
 }
 
 \newcommand{\makeapprovalsheet}{
-	\begin{center}
-		% \phantomsection
-		% \addcontentsline{toc}{section}{APPROVAL SHEET}
-		{\bf APPROVAL SHEET}
-	\end{center}
-	\par In \hfill fulfillment \hfill of \hfill the \hfill requirements \hfill in \hfill Science, \hfill Technology, \hfill Engineering \hfill and \\ Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
+	\phantomsection
+	\addcontentsline{toc}{section}{APPROVAL SHEET}
+	\section*{Approval Sheet}
+	\par In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
 	\vspace*{3\baselineskip}
 	
@@ -214,17 +212,15 @@
 }
 
 \newcommand{\makeacknowledgement}[1]{
-	\begin{center}
-		% \phantomsection
-		% \addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
-		{\bf ACKNOWLEDGEMENT}
-	\end{center}
-	\vspace*{-3 \baselineskip}
-	\paragraph{}#1
+	\phantomsection
+	\addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
+	\section*{ACKNOWLEDGEMENT}
+	\noindent#1
 	\newpage
 }
 
 \newcommand{\makeabstract}[1]{
+	\phantomsection
 	\addcontentsline{toc}{section}{ABSTRACT}	
 	\section*{Abstract}
 	\noindent{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
@@ -238,14 +234,18 @@
 
 \newcommand{\definitionofterms}{
 	\phantomsection
-	\addcontentsline{toc}{section}{DEFINITION OF TERMS}
 	\section*{Definition of Terms}
+	\addcontentsline{toc}{section}{DEFINITION OF TERMS}
+}
+\newcommand{\termdef}[2]{
+    \par \hangindent=1em \hangafter=1 \noindent  
+    \textbf{#1}\hspace{2\wordsep}--\hspace{2\wordsep}#2
 }
 
 \newcommand{\literaturecited}{
 	\phantomsection
-	\addcontentsline{toc}{section}{LITERATURE CITED}
 	\section*{Literature Cited}
+	\addcontentsline{toc}{section}{LITERATURE CITED}
 	\printbibliography[heading=none]
 }
 
