@@ -40,7 +40,7 @@
 \newbact{ecoli}{genus=Escherichia, epithet=coli}
 
 % Feel free to remove once your remove all the dummy text
-\usepackage{lipsum} 
+\usepackage[random]{blindtext} 
 \usepackage{dtk-logos} % For stylized LaTeX, BibTeX and BibLaTeX logos
 
 % Required for the citations
@@ -119,7 +119,7 @@
 			\bact{ecoli} is made of bacteria stuff.
 			This is \bact[f]{ecoli} in full.
 
-			\lipsum[2]
+			\Blindtext[2]
 
 		\subsection{Objectives of the Study}
 			% "Your objectives should be stated using action verbs that are specific enough to be measured, for example: to compare, to calculate, to assess, to determine, to verify, to calculate, to describe, to explain, etc.
@@ -306,29 +306,42 @@
 
 	\section{MATERIALS AND METHODS}
 		\subsection{Research Design}
-			\lipsum[10]
+			\textcite{labareeTypesResearchDesigns2020} states: \enquote{The function of a research design is to ensure that the evidence obtained enables you to effectively address the research problem logically and as unambiguously as possible.}.
+			You may use the article by \textcite{labareeTypesResearchDesigns2020} to figure out which research design will suit your study the best.
+			In this section of the paper, the research design is described, as well as the independent and dependent variables involved.
+			The description of how identified extraneous variables are held constant is also elaborated in the Research Design section.
+			If the study is developmental in nature, the stages of development may be stated in this section.
 
 		\subsection{Locale of the Study}
-			\textcite{letcherWindEnergyEngineering2017} states the following: \lipsum[11].
+			The places where the study is executed should be stated in the Locale of the Study.
+			The population where samples are taken, as well as the sample size, should be mentioned here.
+			This section must also contain the reasoning for choosing the locale, with respect to the scope and limitations of the study.
 
 		\subsection{Materials and Research Instruments}
-			\lipsum[12]
+			The materials required in the study as well as any instrumentation to be used should be mentioned in the Materials and Research Instruments.
+			The reasoning may involve any past researches or research-based handbooks that are relevant to the study and are published works (as published works tend to be peer-reviewed).
+			An example of a research-based handbook is \textcite{letcherWindEnergyEngineering2017}.
 
 		\subsection{Procedures}
-			\lipsum[13]
+			An elaborate and chronological description of the procedures to be taken is provided in this section.
+			The proper reasoning for each step taken should be stated, as well as what materials and research instruments are used in each step.
+			\subsubsection{Subheadings}
+				Subheadings may be used to provide logical divisions of the procedure.
 
 		\subsection{Treatment of Data}
-			\subsubsection{Statement of Hypotheses} \vspace{-2em}
+			\subsubsection{Statement of Hypotheses} \vspace{-\baselineskip}
 				\begin{align*}
-					H_0: & \mu = 50 \\
-					H_a: & \mu > 50
+					H_0: & ~ \mu = 50 \\
+					H_a: & ~ \mu > 50
 				\end{align*}
 			\subsubsection{Analysis of Data}
-				\lipsum[4]
+				The statistical tools as well as the significance level to be used is mentioned in this portion of the paper.
+				How the statistical tools will be used should also be detailed in this section.
+
 
 	\section{RESULTS AND DISCUSSION}
 		\paragraph{Results}
-			\lipsum[13]
+			\blindtext
 			\begin{figure}[ht]
 				\centering
 				\definecolor{grrayt}{HTML}{848484}
@@ -357,11 +370,11 @@
 						node[pos=4/4,anchor=south, color=black, yshift=10] {68.0};
 					\end{axis}
 				\end{tikzpicture}
-				\caption[Sample bar graph.]{Sample bar graph of softening points.}
+				\caption[Sample bar graph. ]{Sample bar graph of softening points.}
 				\label{fig:samplebargraph}
 			\end{figure}
 
-			\lipsum[15]
+			\blindtext
 
 			\begin{table}[ht]
 				\centering
@@ -377,8 +390,9 @@
 				\label{tab:sampletable}
 			\end{table}
 
-			\lipsum[14]
+			\blindtext
 
+			\vspace{-\baselineskip}
 			\begin{align}
 				E    & = mc^2 \label{eq:meeq}                                \\
 				x(t) & = \int_{-B}^{B} X(f)e^{j 2\pi f t}~df \label{eq:samp}
@@ -387,7 +401,7 @@
 			The solution to Equation~\ref{eq:meeq} is Equation~\ref{eq:samp} and is shown in Figure~\ref{fig:samplebargraph} and Table~\ref{tab:sampletable} \autocite{al-shemmeriWindTurbines2010} (Listing~\ref{lst:game.py}).
 
 	\section{CONCLUSION AND RECOMMENDATIONS}
-		\lipsum[2-4]
+		\Blindtext
 
 	\literaturecited{}
 
@@ -400,12 +414,12 @@
 			\label{tab:task_lists_duration}
 			\begin{tabularx}{\linewidth}{cXcc}
 				\toprule
-				Task & Task Description                                                      & Preceding Tasks & Duration (in days) \\
+				Task & Task Description                     & Preceding Tasks & Duration (in days) \\
 				\midrule
-				A    & Development of Warzone Game Platform and Implementation of Algorithms & ---             & 30                 \\
-				B    & Testing, Refinement and Optimization of Implemented Programs          & A               & 31                 \\
-				C    & Data Collection                                                       & B               & 60                 \\
-				D    & Data Analysis                                                         & C               & 60                 \\
+				A    & Implementation of Algorithms         & ---             & 30                 \\
+				B    & Testing, Refinement and Optimization & A               & 31                 \\
+				C    & Data Collection                      & B               & 60                 \\
+				D    & Data Analysis                        & C               & 60                 \\
 				\bottomrule
 			\end{tabularx}
 		\end{table}
@@ -471,37 +485,39 @@
 
 		\begin{landscape}
 			\newpage
-			\newcommand{\tsmpap}[8]{\makecell{#1} & #2 & \makecell{#3} & \makecell{#4} & \makecell{#5} & \makecell{#6} & \makecell{#7} & \makecell{#8} \\}
-			\newenvironment{TSMPAP}{\tabularx{\linewidth}{cXcccccc}}{\endtabularx}
+			\newcommand{\allpersonnel}{
+				\begin{tabular}{c}All\\Personnel\end{tabular}
+			}
+			\newcommand{\threerowdate}[3]{
+				\begin{tabular}{c}#1\\#2\\#3\end{tabular}
+			}
 			\begin{table}[ht]
 				\centering
 				\caption{Task Schedule Management and Personnel Assignment Plan}
 				\label{tab:task_schedule_personnel_assignment}
 				\begin{tabular}{cccccccc}
 					\toprule
-					Task & Task Description           & Personnel                  & Duration (in days) & EST                        & LST                        & ECT                        & LCT                        \\
+					Task & Task Description                     & Personnel     & Duration (in days) & EST                          & LST                          & ECT                          & LCT                          \\
 					\midrule
-					A    & \begin{tabular}{c} Development of Warzone Game Platform and \\ Implementation of Algorithms \end{tabular} & \begin{tabular}{c}All\\Personnel\end{tabular} & 30                 & \begin{tabular}{c} NOV\\01\\2019 \end{tabular} & \begin{tabular}{c} NOV\\30\\2019 \end{tabular} & \begin{tabular}{c} NOV\\01\\2019 \end{tabular} & \begin{tabular}{c} NOV\\30\\2019 \end{tabular} \\
-					B    & \begin{tabular}{c} Testing, Refinement and Optimization \\ of Implemented Programs \end{tabular} & \begin{tabular}{c}All\\Personnel\end{tabular} & 31                 & \begin{tabular}{c} DEC\\01\\2019 \end{tabular} & \begin{tabular}{c} DEC\\31\\2019 \end{tabular} & \begin{tabular}{c} DEC\\01\\2019 \end{tabular} & \begin{tabular}{c} DEC\\31\\2019 \end{tabular} \\
-					C    & Data Collection            & \begin{tabular}{c}All\\Personnel\end{tabular} & 60                 & \begin{tabular}{c} JAN\\01\\2019 \end{tabular} & \begin{tabular}{c} FEB\\29\\2019 \end{tabular} & \begin{tabular}{c} JAN\\01\\2019 \end{tabular} & \begin{tabular}{c} FEB\\29\\2019 \end{tabular} \\
-					D    & Data Analysis              & \begin{tabular}{c}All\\Personnel\end{tabular} & 61                 & \begin{tabular}{c} MAR\\01\\2019 \end{tabular} & \begin{tabular}{c} APR\\31\\2019 \end{tabular} & \begin{tabular}{c} MAR\\01\\2019 \end{tabular} & \begin{tabular}{c} APR\\31\\2019 \end{tabular} \\
+					A    & Implementation of Algorithms         & \allpersonnel & 30                 & \threerowdate{NOV}{01}{2019} & \threerowdate{NOV}{30}{2019} & \threerowdate{NOV}{01}{2019} & \threerowdate{NOV}{30}{2019} \\
+					B    & Testing, Refinement and Optimization & \allpersonnel & 31                 & \threerowdate{DEC}{01}{2019} & \threerowdate{DEC}{31}{2019} & \threerowdate{DEC}{01}{2019} & \threerowdate{DEC}{31}{2019} \\
+					C    & Data Collection                      & \allpersonnel & 60                 & \threerowdate{JAN}{01}{2019} & \threerowdate{FEB}{29}{2019} & \threerowdate{JAN}{01}{2019} & \threerowdate{FEB}{29}{2019} \\
+					D    & Data Analysis                        & \allpersonnel & 61                 & \threerowdate{MAR}{01}{2019} & \threerowdate{APR}{31}{2019} & \threerowdate{MAR}{01}{2019} & \threerowdate{APR}{31}{2019} \\
 					\bottomrule
 				\end{tabular}
 			\end{table} \newpage
 
-			\newcommand{\mesp}[6]{#1 & \makecell{#2} & \makecell{#3} & \makecell{#4} & \makecell{#5} & \makecell{#6} \\}
-			\newenvironment{MESP}{\tabularx{\linewidth}{Xccccc}}{\endtabularx}
 			\begin{table}[htbp]
 				\centering
 				\caption{Material and Equipment Sourcing Plan}
 				\label{tab:material_equipment_sourcing}
 				\begin{tabular}{cccccc}
 					\toprule
-					Protocol                     & Date/s Needed    & Unit & Materials Needed         & Potential Source & Remarks \\
+					Protocol                             & Date/s Needed    & Unit & Materials Needed         & Potential Source & Remarks \\
 					\midrule
-					\begin{tabular}{c} Development of Warzone Game Platform \\ and Implementation of Algorithm \end{tabular}   & NOV-01 to 30     & 1    & Laptop with Python       & From Home        & On Hand \\
-					\begin{tabular}{c} Testing, Refinement and Optimization \\ of Implemented Programs \end{tabular}   & DEC-01 to 31     & 1    & Laptop with Python       & From Home        & On Hand \\
-					Data Collection and Analysis & JAN-01 to APR-31 & 1    & Laptop with Python and R & From Home        & On Hand \\
+					Implementation of Algorithm          & NOV-01 to 30     & 1    & Laptop with Python       & From Home        & On Hand \\
+					Testing, Refinement and Optimization & DEC-01 to 31     & 1    & Laptop with Python       & From Home        & On Hand \\
+					Data Collection and Analysis         & JAN-01 to APR-31 & 1    & Laptop with Python and R & From Home        & On Hand \\
 					\bottomrule
 				\end{tabular}
 			\end{table}
@@ -516,7 +532,7 @@
 					\midrule
 					Development of Carpal Tunnel Syndrome & Frequent 5-minute breaks to relieve muscles \\
 					Electrocution                         & Proper usage of electronic devices          \\
-					Loss of data                          & Data upload into the cloud                  \\
+					Loss of data                          & Upload of data into the cloud               \\
 					Proprietary software trial expiry     & Use of free and open-source software        \\
 					\bottomrule
 				\end{tabularx}

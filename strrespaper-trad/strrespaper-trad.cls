@@ -240,7 +240,7 @@
 \newcommand{\makeacknowledgement}[1]{
 	\phantomsection
 	\addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
-	\section*{ACKNOWLEDGEMENT}
+	\section*{Acknowledgement}
 	#1
 	\newpage
 }
