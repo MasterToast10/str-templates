@@ -67,56 +67,84 @@
 \setlength{\headheight}{15pt}
 
 \newcommand{\contents}{
+	\contentsheaders
+
 	\setcounter{tocdepth}{2}
 	\cftsetindents{section}{0em}{7em}
 	\cftsetindents{subsection}{2em}{0em}
 	
+	\newlength{\contentsadjust}
+	\setlength{\contentsadjust}{-0.95em}
+	
 	\renewcommand{\cfttoctitlefont}{\normalsize\bf}
-	\renewcommand{\cftloftitlefont}{\normalsize\bf Figure \hfill\hspace{-1.15em}}
-	\renewcommand{\cftlottitlefont}{\normalsize\bf ~~Table \hfill\hspace{-1.15em}}
+	\renewcommand{\cftloftitlefont}{\normalsize\bf ~Figure \hfill\hspace{\contentsadjust}}
+	\renewcommand{\cftlottitlefont}{\normalsize\bf ~~Table \hfill\hspace{\contentsadjust}}
 	\renewcommand{\contentsname}{}
 	\renewcommand{\listfigurename}{Title}
 	\renewcommand{\listtablename}{Title}
-	\renewcommand{\cftafterloftitle}{\hfill\bf Page \hspace{-1.15em}}
-	\renewcommand{\cftafterlottitle}{\hfill\bf Page \hspace{-1.15em}}
+	\renewcommand{\cftafterloftitle}{\hfill\bf Page \hspace{\contentsadjust}}
+	\renewcommand{\cftafterlottitle}{\hfill\bf Page \hspace{\contentsadjust}}
 	
 	\renewcommand\cftsecaftersnum{:}	
 	\section*{Table of Contents}
-	\vspace{-1.5\baselineskip}\tableofcontents
+	\vspace{-\baselineskip}\tableofcontents
 	\thispagestyle{fancy}
 	\newpage
 	
 	\phantomsection
 	\addcontentsline{toc}{section}{List of Figures}
 	\section*{List of Figures}
-	\vspace{-\baselineskip}\listoffigures
+	\listoffigures
 	\thispagestyle{fancy}
 	\newpage
 	
 	\phantomsection
 	\addcontentsline{toc}{section}{List of Tables}
 	\section*{List of Tables}
-	\vspace{-\baselineskip}\listoftables
+	\listoftables
 	\thispagestyle{fancy}
 	\newpage
 }
 
 \newcommand{\listoflistings}{
     \renewcommand{\lstlistlistingname}{
-        \normalsize\bf Listing \hfill \hspace{-1em} Title \hfill Page \hspace{-1em}
+        \normalsize\bf ~Listing \hfill \hspace{\contentsadjust} Title \hfill Page \hspace{\contentsadjust}
     }    
 
     \phantomsection
 	\addcontentsline{toc}{section}{List of Listings}
 	\section*{List of Listings}
-    \vspace{-\baselineskip}\lstlistoflistings
+    \lstlistoflistings
     \thispagestyle{fancy}
     \newpage
 }
 
-\newcommand{\mainmatter}{\pagenumbering{arabic} \doublespace}
+\newcommand{\frontmatter}{\pagenumbering{roman} \frontheaders}
+
+\newcommand{\mainmatter}{\pagenumbering{arabic} \doublespace \initheaders}
+
+\renewcommand{\appendix}{
+	\setcounter{section}{0}%
+	\setcounter{subsection}{0}%
+    \gdef\thesection{APPENDIX \@Alph\c@section}
+    \gdef\sectionbreak{\clearpage}
+		\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\thesection}{0pt}{\MakeUppercase}
+		\titlespacing{\section}{0pt}{12pt}{0pt}
+}
 
 \newcommand{\sectionbreak}{\clearpage}
+
+\renewcommand{\thesection}{CHAPTER \Roman{section}}
+\renewcommand{\thesubsection}{}
+
+\newcommand{\frontheaders}{
+	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
+	\titlespacing*{\section}{0pt}{0pt}{0.5\baselineskip}
+}
+
+\newcommand{\contentsheaders}{
+	\titlespacing*{\section}{0pt}{0pt}{0pt}
+}
 
 \newcommand{\initheaders}{
     \titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
@@ -156,16 +184,14 @@
 		
 		\@date
 	\end{center}
-	\newpage \pagenumbering{roman}
-
-	\initheaders
+	\newpage
 }
 
 \newcommand{\makeapprovalsheet}{
 	\phantomsection
 	\addcontentsline{toc}{section}{APPROVAL SHEET}
 	\section*{Approval Sheet}
-	\par In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
+	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
 	\vspace*{3\baselineskip}
 	
@@ -215,7 +241,7 @@
 	\phantomsection
 	\addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
 	\section*{ACKNOWLEDGEMENT}
-	\noindent#1
+	#1
 	\newpage
 }
 
@@ -223,7 +249,7 @@
 	\phantomsection
 	\addcontentsline{toc}{section}{ABSTRACT}	
 	\section*{Abstract}
-	\noindent{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
+	{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
 	\vspace*{2\baselineskip}\\
 	Adviser: {\bf \the\adviser}	
 	\\
@@ -247,18 +273,6 @@
 	\section*{Literature Cited}
 	\addcontentsline{toc}{section}{LITERATURE CITED}
 	\printbibliography[heading=none]
-}
-
-\renewcommand{\thesection}{CHAPTER \Roman{section}}
-\renewcommand{\thesubsection}{}
-
-\renewcommand{\appendix}{
-	\setcounter{section}{0}%
-	\setcounter{subsection}{0}%
-    \gdef\thesection{APPENDIX \@Alph\c@section}
-    \gdef\sectionbreak{\clearpage}
-		\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\thesection}{0pt}{\MakeUppercase}
-		\titlespacing{\section}{0pt}{12pt}{0pt}
 }
 
 \makeatletter
