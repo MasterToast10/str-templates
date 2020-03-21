@@ -10,6 +10,15 @@
 % For images
 \usepackage{graphicx}
 
+% For plotting
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{tikz}
+
+% For units
+\usepackage{siunitx}
+
 % Required for the citations
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
 \addbibresource{../sample/bibliographies/str.bib} % Add your BibLaTeX files here
@@ -90,8 +99,33 @@
 	        \end{table}
 
 	        \begin{figure}[htbp]
-	            \centering
-	            \includegraphics[width=\linewidth]{../sample/graphics/bar_graph}
+				\centering
+				\definecolor{grrayt}{HTML}{848484}
+				\begin{tikzpicture}
+					\begin{axis}[
+						width  = \linewidth,
+						height = 8cm,
+						major x tick style = transparent,
+						ybar=2*\pgflinewidth,
+						bar width=\linewidth/12,
+						ymajorgrids = true,
+						ylabel = {Softening point (\si{\celsius})},
+						symbolic x coords={0\% PP, 2\% PP, 4\% PP, 6\% PP},
+						xtick = data,
+						scaled y ticks = false,
+						try min ticks = 10,
+						enlarge x limits=0.25,
+						ymin=0, ymax = 100
+					]
+						\addplot[style={grrayt,fill=grrayt,mark=none}, error bars/.cd,
+						y dir=both, y explicit, error bar style={color=black}]
+							coordinates {(0\% PP, 48.5)+-(4.0, 4.0) (2\% PP, 56.0)+-(2.0, 2.0) (4\% PP, 61.5)+-(2.5, 2.5) (6\% PP, 68.0)+-(2.0, 2.0)}
+							node[pos=0/4,anchor=south, color=black, yshift=10] {48.5}
+							node[pos=1/4,anchor=south, color=black, yshift=10] {56.0}
+							node[pos=3/4,anchor=south, color=black, yshift=10] {61.5}
+							node[pos=4/4,anchor=south, color=black, yshift=10] {68.0};
+					\end{axis}
+				\end{tikzpicture}
 	            \caption{
 					Figure label should be in sentence case ending in period, placed under the figure.
 					Each figure should have a legend or caption and should be self-explanatory.
