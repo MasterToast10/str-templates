@@ -12,5 +12,6 @@
         "%TMPFILE%",
         "-y=defaultIndent: '%INDENT%'",
         "-l"
-    ]
+    ],
+    "todo-tree.regex.regex": "((%|//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])"
 }
