@@ -1,11 +1,24 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{strrespaper-journ}[2020/03/13 Journal Article Template for Science, Technology, Engineering, and Mathematics Research]
-% Copyright (C) 2020  Vash Ancheta
+% Copyright (C) 2020  Vash Ancheta. All rights reserved.
 
 % This program is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
 % (at your option) any later version.
+
+% This .cls file is considered program source, and the associated files
+% such as the sample .tex, .bib, and .py files
+% are considered works of software and not content.
+
+% As copyright holder, I make no restriction on the output produced with
+% the templates and only wish to apply the license to the modified versions
+% of the TeX template files.
+% I do not claim ownership of the sample image used, as it is credited
+% to Bernard Hermant on Unsplash linked here:
+% https://unsplash.com/@bernardhermant
+% You may view the original photo here:
+% https://unsplash.com/photos/IhcSHrZXFs4
 
 % This program is distributed in the hope that it will be useful,
 % but WITHOUT ANY WARRANTY; without even the implied warranty of
