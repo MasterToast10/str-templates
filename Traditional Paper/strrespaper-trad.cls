@@ -19,11 +19,11 @@
 
 \LoadClass[12pt]{article}
 \RequirePackage{newtxtext,newtxmath}
+\RequirePackage{microtype}
 \RequirePackage[letterpaper, margin=1in, left=1.5in]{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
-\RequirePackage{ifmtarg}
 \RequirePackage{titlesec, titletoc, tocloft}
 \RequirePackage{hyperref}
 
