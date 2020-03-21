@@ -8,8 +8,8 @@
 % (at your option) any later version.
 
 % This .cls file is considered program source, and the associated files
-% such as the sample .tex, .bib, and .py files
-% are considered works of software and not content.
+% such as the sample .tex, .bib, and .py files as well as any configuration 
+% files included are considered works of software and not content.
 
 % As copyright holder, I make no restriction on the output produced with
 % the templates and only wish to apply the license to the modified versions
