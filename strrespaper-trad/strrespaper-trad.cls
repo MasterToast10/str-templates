@@ -126,9 +126,8 @@
 	\setcounter{section}{0}%
 	\setcounter{subsection}{0}%
     \gdef\thesection{APPENDIX \@Alph\c@section}
-    \gdef\sectionbreak{\clearpage}
-		\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\thesection}{0pt}{\MakeUppercase}
-		\titlespacing{\section}{0pt}{12pt}{0pt}
+	\gdef\sectionbreak{\clearpage}
+	\appendixheaders
 }
 
 \newcommand{\sectionbreak}{\clearpage}
@@ -160,6 +159,11 @@
 
 	\titleformat{\subparagraph}{\itshape \singlespacing}{}{0pt}{}
 	\titlespacing{\subparagraph}{0.5em}{0pt}{6pt}
+}
+
+\newcommand{\appendixheaders}{
+	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\thesection}{0pt}{\MakeUppercase}
+	\titlespacing{\section}{0pt}{12pt}{0pt}
 }
 
 \renewcommand{\maketitle}{
