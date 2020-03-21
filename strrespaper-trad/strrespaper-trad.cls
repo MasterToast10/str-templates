@@ -24,7 +24,6 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
-\RequirePackage{ifmtarg}
 \RequirePackage{titlesec, titletoc, tocloft}
 
 \RequirePackage{hyperref}
