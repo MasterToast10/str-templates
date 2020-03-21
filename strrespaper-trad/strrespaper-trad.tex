@@ -6,6 +6,7 @@
 
 % For better tables
 \usepackage{booktabs}
+\usepackage{threeparttable}
 
 % For images
 \usepackage{graphicx}
@@ -27,6 +28,9 @@
 
 % For units
 \usepackage{siunitx}
+\sisetup{
+	separate-uncertainty=true
+}
 
 % For Project Plan
 \usepackage{pgfgantt}
@@ -393,19 +397,38 @@
 
 			\blindtext
 
-			\begin{table}[ht]
+			\begin{table}[htbp]
 				\centering
-				\caption[Sample Table]{Sample Table}
-				\begin{tabular}{cccc}
-					\toprule
-					foo & bar & beet & skeet \\
-					\midrule
-					1   & 12  & 122  & 11    \\
-					3   & 4   & 11   & 33    \\
-					\bottomrule
-				\end{tabular}
-				\label{tab:sampletable}
+				\begin{threeparttable}
+					\caption[Characteristics of the Sample]{Characteristics of the Sample\tnote{\textdagger}}
+					\label{tab:sample_characteristics}
+					\begin{tabular}{llll}
+						\toprule
+						Variable                                     & Control         & Heat \& moisture exchanger & Probability \\
+						                                             & (n = 45)        & (n = 49)                   &             \\
+						\midrule
+						Age (years)\tnote{1}                           & \num{32.7(35)}  & \num{36.3(27)}             & 0.08        \\
+						Height (\si{\meter})\tnote{1}                            & \num{1.72(60)}  & \num{1.67(80)}             & NS          \\
+						Weight (\si{\kilo\gram})\tnote{1}                           & \num{76.6(128)} & \num{72.3(162)}            & NS          \\
+						Gender (number of males)\tnote{2}            & 21              & 26                         & NS          \\
+						ASA Physical Status\tnote{3}                 & \num{2(1)}      & \num{2(1)}                 & NS          \\
+						OR room temperature (\si{\celsius})\tnote{1} & \num{21.1(36)}  & \num{20.6(29)}             & NS          \\
+						\bottomrule
+					\end{tabular}
+					\begin{tablenotes}
+						\small
+						\item[1] Data is expressed as mean \textpm{} one standard deviation. Probability determined using a two-tailed, unpaired Student's t-test.
+						\item[2] 
+							Data is expressed as number within the sample who possess the characteristic. 
+							Probability determined using Chi square (or Fisher's Exact test for $2 \times 2$ tables).
+						\item[3] 
+							Data is expressed as median \textpm{} one interquartile range.
+							Probability determined using a Mann-Whitney U test.
+						\item[\textdagger] Taken from \textcite{doschHowWriteResults2009} 
+					\end{tablenotes}
+				\end{threeparttable}
 			\end{table}
+			Take advantage of \texttt{siunitx} package like so: \SI{5.67(12)e6}{\ampere}.
 
 			\blindtext
 
@@ -415,11 +438,27 @@
 				x(t) & = \int_{-B}^{B} X(f)e^{j 2\pi f t}~df \label{eq:samp}
 			\end{align}
 
-			The solution to Equation~\ref{eq:meeq} is Equation~\ref{eq:samp} and is shown in Figure~\ref{fig:samplebargraph} and Table~\ref{tab:sampletable} \autocite{al-shemmeriWindTurbines2010} (Listing~\ref{lst:game.py}).
+			The solution to Equation~\ref{eq:meeq} is Equation~\ref{eq:samp} and is shown in Figure~\ref{fig:samplebargraph} and Table~\ref{tab:sample_characteristics} \autocite{al-shemmeriWindTurbines2010} (Listing~\ref{lst:game.py}).
 
 	\section{CONCLUSION AND RECOMMENDATIONS}
 		% TODO: Conclusion and Recommendations
-		\Blindtext
+		\enquote{%
+			The Conclusions and Recommendations may be combined or, in long reports, presented in separate sections.
+			If there are no recommendations to be made as a result of the project, just call this section Conclusions.
+
+			The Conclusions section sums up the key points of your discussion, the essential features of your design, or the significant outcomes of your investigation.
+			As its function is to round off the story of your project, it should:
+
+			\begin{itemize}
+				\item be written to relate directly to the aims of the project as stated in the Introduction
+				\item indicate the extent to which the aims have been achieved
+				\item summarise the key findings, outcomes or information in your report
+				\item acknowledge limitations and make recommendations for future work (where applicable)
+				\item highlight the significance or usefulness of your work.
+			\end{itemize}
+
+			The conclusions should relate to the aims of the work[.]%
+		} \autocite{monashuniversityConclusionsRecommendations2020}
 
 	\literaturecited{}
 
@@ -495,10 +534,12 @@
 						\netchart{121}{60}{181} {Task D} {121}{60}{181} {tD}
 					\end{scope}
 				\end{scope}
+
 				\nchconnect{tA}{tB}
 				\nchconnect{tB}{tC}
 				\nchconnect{tC}{tD}
 			\end{tikzpicture}
+
 			\caption{Network chart.}
 			\label{fig:network_chart}
 		\end{figure}

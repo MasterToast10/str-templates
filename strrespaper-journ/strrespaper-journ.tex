@@ -47,87 +47,88 @@
 \keywords{up to six; key; words; reflecting; content; paper} % Should be arranged alphabetically and separated by semicolon (This example is not)
 
 \begin{document}
-    \maketitle
+	\maketitle
 
-    \section{Introduction}
-	    Journal paper should be written a maximum of 7 pages excluding references section.
-	    On the bottom of the page, list up to six keywords that reflect the content of the paper arranged alphabetically (Santos, 2016). % This is personal communication
+	\section{Introduction}
+		Journal paper should be written a maximum of 7 pages excluding references section.
+		On the bottom of the page, list up to six keywords that reflect the content of the paper arranged alphabetically (Santos, 2016). % This is personal communication
 
-	    An Introduction should describe the paper’s background and provide the rationale for the present study.
-	    Cite only those references that will provide the most relevant background rather than an exhaustive review of the topic (Santos \& Reyes, 2017). % This is personal communication too
+		An Introduction should describe the paper’s background and provide the rationale for the present study.
+		Cite only those references that will provide the most relevant background rather than an exhaustive review of the topic (Santos \& Reyes, 2017). % This is personal communication too
 
-    \section{Methodology}
-	    \subsection{Subheading for Procedure 1}
+	\section{Methodology}
+		\subsection{Subheading for Procedure 1}
 			Methods should be described concisely and clearly to allow experiments to be repeated.
 			For commonly used methods, a simple reference is sufficient.
 			Avoid references that are not readily accessible.
 
-    \section{Results}
-	    \subsection{Subheading for Result 1}
+	\section{Results}
+		\subsection{Subheading for Result 1}
 			In Results, present data in only one of the following: text, table, or figure.
 			Results should preferably have no more than five illustrations (tables and/or figures).
 			Do not use tables or figures to present data that can be more concisely stated in the text.
 			Discussion should interpret results in relation to previously published work.
 			Do not repeat results or reiterate the introduction.
-	        \begin{table}[htbp]
-	            \begin{threeparttable}
-	                \caption{Table Label Should be Concise and in Title Case \tnote{a}}
-	                \label{tab:concise_table}
-	                \begin{tabular}{cccc}
-	                    \toprule
-	                    Criteria Number & A (units)       & B (units)       & C (units)       \\
-	                    \midrule
-	                    1               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
-	                    2               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
-	                    3               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
-	                    4               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
-	                    \bottomrule
-	                \end{tabular}
+			\begin{table}[htbp]
+				\center
+				\begin{threeparttable}
+					\caption{Table Label Should be Concise and in Title Case \tnote{a}}
+					\label{tab:concise_table}
+					\begin{tabular}{cccc}
+						\toprule
+						Criteria Number & A (units)       & B (units)       & C (units)       \\
+						\midrule
+						1               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
+						2               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
+						3               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
+						4               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
+						\bottomrule
+					\end{tabular}
 					\begin{tablenotes}
 						\small
-	                    \item[a] Note: Type each table on a separate sheet.
-	                    Never use vertical lines to separate columns.
-	                    Prepare tables so that compared data read down, not across.
-	                    Columns that show no significant variations should be omitted.
-	                    Do not use tables for word lists.
-	                    Titles should be clear, and column headings should be brief with units of measurements in parentheses.
-	                    Symbols and abbreviations should be defined below the table.
-	                    Indicate table footnotes with a, b, c, etc.
-	                    Do not present the same data in both graphical and tabular form.
-	                    Tables should be self-explanatory or understandable without reference to the text.
-	                \end{tablenotes}
-	            \end{threeparttable}
-	        \end{table}
+						\item[a] Note: Type each table on a separate sheet.
+						Never use vertical lines to separate columns.
+						Prepare tables so that compared data read down, not across.
+						Columns that show no significant variations should be omitted.
+						Do not use tables for word lists.
+						Titles should be clear, and column headings should be brief with units of measurements in parentheses.
+						Symbols and abbreviations should be defined below the table.
+						Indicate table footnotes with a, b, c, etc.
+						Do not present the same data in both graphical and tabular form.
+						Tables should be self-explanatory or understandable without reference to the text.
+					\end{tablenotes}
+				\end{threeparttable}
+			\end{table}
 
-	        \begin{figure}[htbp]
+			\begin{figure}[htbp]
 				\centering
 				\definecolor{grrayt}{HTML}{848484}
 				\begin{tikzpicture}
 					\begin{axis}[
-						width  = \linewidth,
-						height = 8cm,
-						major x tick style = transparent,
-						ybar=2*\pgflinewidth,
-						bar width=\linewidth/12,
-						ymajorgrids = true,
-						ylabel = {Softening point (\si{\celsius})},
-						symbolic x coords={0\% PP, 2\% PP, 4\% PP, 6\% PP},
-						xtick = data,
-						scaled y ticks = false,
-						try min ticks = 10,
-						enlarge x limits=0.25,
-						ymin=0, ymax = 100
-					]
+							width  = \linewidth,
+							height = 8cm,
+							major x tick style = transparent,
+							ybar=2*\pgflinewidth,
+							bar width=\linewidth/12,
+							ymajorgrids = true,
+							ylabel = {Softening point (\si{\celsius})},
+							symbolic x coords={0\% PP, 2\% PP, 4\% PP, 6\% PP},
+							xtick = data,
+							scaled y ticks = false,
+							try min ticks = 10,
+							enlarge x limits=0.25,
+							ymin=0, ymax = 100
+						]
 						\addplot[style={grrayt,fill=grrayt,mark=none}, error bars/.cd,
-						y dir=both, y explicit, error bar style={color=black}]
-							coordinates {(0\% PP, 48.5)+-(4.0, 4.0) (2\% PP, 56.0)+-(2.0, 2.0) (4\% PP, 61.5)+-(2.5, 2.5) (6\% PP, 68.0)+-(2.0, 2.0)}
-							node[pos=0/4,anchor=south, color=black, yshift=10] {48.5}
-							node[pos=1/4,anchor=south, color=black, yshift=10] {56.0}
-							node[pos=3/4,anchor=south, color=black, yshift=10] {61.5}
-							node[pos=4/4,anchor=south, color=black, yshift=10] {68.0};
+							y dir=both, y explicit, error bar style={color=black}]
+						coordinates {(0\% PP, 48.5)+-(4.0, 4.0) (2\% PP, 56.0)+-(2.0, 2.0) (4\% PP, 61.5)+-(2.5, 2.5) (6\% PP, 68.0)+-(2.0, 2.0)}
+						node[pos=0/4,anchor=south, color=black, yshift=10] {48.5}
+						node[pos=1/4,anchor=south, color=black, yshift=10] {56.0}
+						node[pos=3/4,anchor=south, color=black, yshift=10] {61.5}
+						node[pos=4/4,anchor=south, color=black, yshift=10] {68.0};
 					\end{axis}
 				\end{tikzpicture}
-	            \caption{
+				\caption{
 					Figure label should be in sentence case ending in period, placed under the figure.
 					Each figure should have a legend or caption and should be self-explanatory.
 					Figure legends should be in lowercase print-type, except for the first letter of first word.
@@ -135,18 +136,18 @@
 					Figures include line drawings, photographs, and computer plots.
 					They should be clear.
 				}
-	            \label{fig:bar_graph}
-	        \end{figure}
+				\label{fig:bar_graph}
+			\end{figure}
 
-    \section{Discussion}
+	\section{Discussion}
 		Discussion should incorporate referencing of the figures or data tables presented in the Results section.
 		Literature citations should be selective, not to exceed 30 references for a research paper.
 
-    \section{Summary and Conclusion}
+	\section{Summary and Conclusion}
 		Point out significant findings of the study in relation to the objectives of the study.
 		Include your recommendations in this section.
 
-    \section{Acknowledgement}
+	\section{Acknowledgement}
 		Acknowledgements should be brief and are placed under a separate heading immediately before References.
 		Acknowledge any financial support for the work being published and personal assistance.
 
@@ -154,7 +155,7 @@
 		\nocite{al-shemmeriWindTurbines2010}
 		\nocite{trewbyWindEnergyImplications2014}
 
-    \printbibliography
-	% The example bibliographical entries were in APA 6th so it is recommended that you simply generate a .bib file using software such as Zotero and use BibLaTeX to format the citations and bibliography for you.
-	% It was noted in the template that Personal communication should appear only in text parenthetically with the names of persons who supplied the information. They should not be listed in the References section.
+	\printbibliography
+		% The example bibliographical entries were in APA 6th so it is recommended that you simply generate a .bib file using software such as Zotero and use BibLaTeX to format the citations and bibliography for you.
+		% It was noted in the template that Personal communication should appear only in text parenthetically with the names of persons who supplied the information. They should not be listed in the References section.
 \end{document}
