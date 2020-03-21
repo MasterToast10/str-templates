@@ -1,5 +1,6 @@
 \documentclass{strrespaper-trad}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{csquotes}
 \usepackage[english]{babel}
 
@@ -31,9 +32,8 @@
 \usepackage{pgfgantt}
 \usepackage{tabularx}
 
-% For code listings (type "texdoc listings" or "texdoc hyphenat" [without the quotes] for more information)
+% For code listings (type "texdoc listings" [without the quotes] for more information)
 \usepackage{listings}
-\usepackage[htt]{hyphenat}
 
 % For species names (type "texdoc biocon" [without the quotes] for more information)
 \usepackage{biocon}
@@ -41,7 +41,7 @@
 \newbact{ecoli}{genus=Escherichia, epithet=coli}
 
 % Feel free to remove once your remove all the dummy text
-\usepackage[random]{blindtext} 
+\usepackage{blindtext} 
 \usepackage{dtk-logos} % For stylized LaTeX, BibTeX and BibLaTeX logos
 
 % Required for the citations
@@ -72,7 +72,7 @@
 \hypersetup{
 	pdftitle={\@title},
 	pdfauthor={Researcher One, A\~na Two, Scholar Bayan},
-	pdfkeywords={stemr, research, paper, template}
+	pdfkeywords={stemres, research, paper, template}
 }
 \makeatother
 

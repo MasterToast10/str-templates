@@ -105,8 +105,27 @@
 	\titlespacing{\subsection}{0pt}{0pt}{0pt}
 }
 
-\makeatletter
+% Hyphenation within TypeWriter Fonts
+\RequirePackage{letltxmacro}
+\LetLtxMacro\origttfamily\ttfamily
+\DeclareRobustCommand*{\ttfamily}{%
+  \origttfamily
+  \hyphenchar\font=`\-\relax
+  \fontdimen3\font=.25em\relax
+  \fontdimen4\font=.167em\relax
+  \fontdimen7\font=.167em\relax
+}
 
+\makeatletter
+\DeclareRobustCommand\vttfamily{%
+  \not@math@alphabet\vttfamily\relax
+  \fontfamily{cmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
+  \selectfont
+}
+\DeclareTextFontCommand{\textvtt}{\vttfamily}
+\makeatother
+
+\makeatletter
 \newtoks\author@toks\newcounter{author@counter}%
 \setcounter{author@counter}{0}%
 \newcommand{\addAuthor}[1]{%
@@ -134,5 +153,4 @@
 	\the\author@toks%
 	\endgroup
 }
-
 \makeatother
