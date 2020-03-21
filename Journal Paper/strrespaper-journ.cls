@@ -19,6 +19,7 @@
 
 \LoadClass[10pt]{article}
 \RequirePackage{newtxtext,newtxmath}
+\RequirePackage{microtype}
 \RequirePackage[letterpaper, margin=1in, left=1.75cm, right=1.75cm]{geometry}
 \RequirePackage{xcolor}
 \RequirePackage{ragged2e}
