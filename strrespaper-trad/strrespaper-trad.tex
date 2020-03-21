@@ -45,28 +45,28 @@
 
 % Required for the citations
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
-\addbibresource{../sample/bibliographies/str.bib} % Add your BibLaTeX files here
+\addbibresource{../sample/bibliographies/str.bib} % TODO: Add your BibLaTeX files here
 
  
-\title{RESEARCH PROJECT TITLE} % Put your proper title here
-\dayofmonth{13} % Depends on prof
-\date{May 2019} % Also depends on prof
+\title{RESEARCH PROJECT TITLE} % TODO: Put your proper title here
+\dayofmonth{13} % TODO: Day of month (Depends on prof)
+\date{May 2019} % TODO: Date (MMMMM-YYYY; Also depends on prof)
 
 \tptitle{
 	(UPPERCASE except for \textit{Scientific names}) \\
 	RESEARCH PROJECT TITLE
-} % Format your title to make it an inverted pyramid
+} % TODO: Format your title to make it an inverted pyramid
 
-% Names in alphabetical order (First M.I. Family Name)
+% TODO: Names in alphabetical order (First M.I. Family Name)
 \addAuthor{Researcher D. One} 
 \addAuthor{A\~na B. Two}
 \addAuthor{Scholar N. Bayan}
 
-\adviser{Adviser C. Adviser} % Name of adviser
-\level{3} % STR Year Level
+\adviser{Adviser C. Adviser} % TODO: Name of adviser
+\level{3} % TODO: STR Year Level
 
 
-% Setup for PDF Metadata
+% TODO: Setup for PDF Metadata (pdfauthor and pdfkeywords)
 \makeatletter
 \hypersetup{
 	pdftitle={\@title},
@@ -83,6 +83,7 @@
 
 	\makeapprovalsheet
 
+	% TODO: Acknowledgement
 	\makeacknowledgement{
 		\enquote{%
 			For academic theses, there is no right or wrong way to acknowledge people, and who you want to acknowledge is down to personal preference.
@@ -90,6 +91,7 @@
 		} \autocite{thecharlesworthgroupWhatIncludeYour2020}
 	}
 
+	% TODO: Abstract
 	% Do note that abstracts should not contain references.
 	\makeabstract{
 		According to \textcite{georgemasonuniversityWritingAbstract2020}, \enquote{An abstract is a 150- to 250-word paragraph that provides readers with a quick overview of your essay or report and its organization. It should express your thesis (or central idea) and your key points; it should also suggest any implications or applications of the research you discuss in the paper.}.
@@ -103,6 +105,7 @@
 
 	\section{INTRODUCTION}
 		\subsection{Background of the Study}
+		% TODO: Background of the Study
 			\enquote{%
 				The background of the study establishes the context of the research.
 				This section explains why this particular research topic is important and essential to understanding the main aspects of the study.
@@ -122,6 +125,7 @@
 			\Blindtext[2]
 
 		\subsection{Objectives of the Study}
+		% TODO: Objectives of the Study
 			% "Your objectives should be stated using action verbs that are specific enough to be measured, for example: to compare, to calculate, to assess, to determine, to verify, to calculate, to describe, to explain, etc.
 			% Avoid the use of vague non-active verbs such as: to appreciate, to understand, to believe, to study, etc., because it is difficult to evaluate whether they have been achieved." (The Open University, 2017)
 			\nocite{theopenuniversityHealthManagementEthics2017}
@@ -134,6 +138,7 @@
 			\subsubsection{Specific Objectives}
 				% "Specific objectives break down the general objective into smaller, logically connected parts that systematically address the various aspects of the problem.
 				% Your specific objectives should specify exactly what you will do in each phase of your study, how, where, when and for what purpose." (The Open University, 2017)
+				% There should be at least three
 				\begin{enumerate}
 					\item To assess the knowledge, attitude and practice of the community towards HIV/AIDS and VCT services.
 					\item To identify barriers and concerns related to VCT and its uptake.
@@ -141,6 +146,7 @@
 				\end{enumerate}
 
 		\subsection{Significance of the Study}
+		% TODO: Significance of the Study
 			\enquote{%
 				Significance of the study is written as part of the introduction section of a thesis.
 				It provides details to the reader on how the study will contribute to society such as what the study will contribute and who will benefit from it.
@@ -152,6 +158,7 @@
 			List down the major benefits of your study to your stakeholders.
 
 		\subsection{Scope and Limitations of the Study}
+		% TODO: Scope and Limitations of the Study
 			\enquote{When identifying the scope, you need to address not only the problem or issue that you want to study but the population that you want to examine.} \autocite{askmediagroupWhatAreScope2020}. Remember to narrow your scope down as much as possible to ensure efficiency and accuracy during the execution of the research.
 
 			\enquote{%
@@ -164,6 +171,7 @@
 			Researcher-related limitations include time, budget and physical constraints, as well as personal biases that might impact the flow of the research \autocite{askmediagroupWhatAreScope2020}.
 
 	\definitionofterms{}
+	% TODO: Definition of Terms
 		% Remember to use the operational definition of the terms to clarify the terms you use in this paper that might have multiple meanings
 		\termdef{Banana}{
 			an elongated usually tapering tropical fruit with soft pulpy flesh enclosed in a soft usually yellow rind \autocite{merriam-websterDefinitionBanana}
@@ -180,6 +188,7 @@
 		}
 
 	\section{REVIEW OF RELATED LITERATURE}
+	% TODO: Review of Related Literature
 		\textcite{mccombesLiteratureReviewComplete2019} lists five (5) important steps in writing an effective literature review: \textbf{Search} for relevant literature, \textbf{evaluate} sources, \textbf{identify} themes, debates and gaps, \textbf{outline} the structure, and \textbf{write} the literature review itself.
 
 		\paragraph{Searching for Relevant Literature}
@@ -306,6 +315,7 @@
 
 	\section{MATERIALS AND METHODS}
 		\subsection{Research Design}
+		% TODO: Research Design
 			\textcite{labareeTypesResearchDesigns2020} states: \enquote{The function of a research design is to ensure that the evidence obtained enables you to effectively address the research problem logically and as unambiguously as possible.}.
 			You may use the article by \textcite{labareeTypesResearchDesigns2020} to figure out which research design will suit your study the best.
 			In this section of the paper, the research design is described, as well as the independent and dependent variables involved.
@@ -313,22 +323,27 @@
 			If the study is developmental in nature, the stages of development may be stated in this section.
 
 		\subsection{Locale of the Study}
+		% TODO: Locale of the Study
 			The places where the study is executed should be stated in the Locale of the Study.
 			The population where samples are taken, as well as the sample size, should be mentioned here.
 			This section must also contain the reasoning for choosing the locale, with respect to the scope and limitations of the study.
 
 		\subsection{Materials and Research Instruments}
+		% TODO: Materials and Research Instruments
 			The materials required in the study as well as any instrumentation to be used should be mentioned in the Materials and Research Instruments.
 			The reasoning may involve any past researches or research-based handbooks that are relevant to the study and are published works (as published works tend to be peer-reviewed).
 			An example of a research-based handbook is \textcite{letcherWindEnergyEngineering2017}.
 
 		\subsection{Procedures}
+		% TODO: Procedures
 			An elaborate and chronological description of the procedures to be taken is provided in this section.
 			The proper reasoning for each step taken should be stated, as well as what materials and research instruments are used in each step.
 			\subsubsection{Subheadings}
 				Subheadings may be used to provide logical divisions of the procedure.
 
+		
 		\subsection{Treatment of Data}
+		% TODO: Treatment of Data
 			\subsubsection{Statement of Hypotheses} \vspace{-\baselineskip}
 				\begin{align*}
 					H_0: & ~ \mu = 50 \\
@@ -340,6 +355,7 @@
 
 
 	\section{RESULTS AND DISCUSSION}
+		% TODO: Results and Discussion
 		\paragraph{Results}
 			\blindtext
 			\begin{figure}[ht]
@@ -401,6 +417,7 @@
 			The solution to Equation~\ref{eq:meeq} is Equation~\ref{eq:samp} and is shown in Figure~\ref{fig:samplebargraph} and Table~\ref{tab:sampletable} \autocite{al-shemmeriWindTurbines2010} (Listing~\ref{lst:game.py}).
 
 	\section{CONCLUSION AND RECOMMENDATIONS}
+		% TODO: Conclusion and Recommendations
 		\Blindtext
 
 	\literaturecited{}
@@ -408,6 +425,7 @@
 	\appendix
 
 	\section{PROJECT PLAN}
+		% TODO: Task Lists and Duration
 		\begin{table}[htbp]
 			\centering
 			\caption{Task Lists and Duration}
@@ -424,6 +442,7 @@
 			\end{tabularx}
 		\end{table}
 
+		% TODO: Network Chart
 		\begin{figure}[htbp]
 			\centering
 			\newcommand{\netchart}[8]{
@@ -461,6 +480,7 @@
 					}
 			}
 			% !!! Disclaimer: shift distances are exaggerated to demonstrate functionality for more complex networks e.g. multiple threads. If your flow is linear, simply omit the yshift components
+			% TODO: Edit this TikZ Picture to suit your procedures
 			\begin{tikzpicture}
 				\netchart{0}{30}{30} {Task A} {0}{30}{30} {tA}
 				\begin{scope}[xshift=4cm]
@@ -491,6 +511,7 @@
 			\newcommand{\threerowdate}[3]{
 				\begin{tabular}{c}#1\\#2\\#3\end{tabular}
 			}
+			% TODO: Task Schedule Management and Personnel Assignment Plan
 			\begin{table}[ht]
 				\centering
 				\caption{Task Schedule Management and Personnel Assignment Plan}
@@ -507,6 +528,7 @@
 				\end{tabular}
 			\end{table} \newpage
 
+			% TODO: Material and Equipment Sourcing Plan
 			\begin{table}[htbp]
 				\centering
 				\caption{Material and Equipment Sourcing Plan}
@@ -522,6 +544,7 @@
 				\end{tabular}
 			\end{table}
 
+			% TODO: Risk Management Plan
 			\begin{table}[htbp]
 				\centering
 				\caption{Risk Management Plan}
@@ -540,6 +563,7 @@
 		\end{landscape}
 
 	\section{RAW DATA}
+		% TODO: Raw Data
 		\begin{table}[htbp]
 			\centering
 			\caption{Random Table}
@@ -557,6 +581,7 @@
 		\lstinputlisting[caption={game.py}, label={lst:game.py}]{../sample/code/game.py}
 
 	\section{STATISTICAL TABLES}
+		% TODO: Statistical Tables
 		\begin{table}[htbp]
 			\centering
 			\caption{Example of Organisms Sorted Through a Classifier System}
@@ -575,6 +600,7 @@
 		\end{table}
 
 	\section{DOCUMENTATION}
+		% TODO: Documentation
 		\begin{figure}[htbp]
 			\centering
 			\subfloat[We]{
