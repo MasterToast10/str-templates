@@ -7,13 +7,14 @@
 % the Free Software Foundation, either version 3 of the License, or
 % (at your option) any later version.
 
-% This .cls file is considered program source, and the associated files
-% such as the sample .tex, .bib, and .py files as well as any configuration 
-% files included are considered works of software and not content.
-
 % As copyright holder, I make no restriction on the output produced with
 % the templates and only wish to apply the license to the modified versions
-% of the TeX template files.
+% of the TeX template files. You are free to modify the sample files and
+% publish the generated output (e.g. PDF files), however, should you
+% publish a modified version of the source files, you must abide by the terms
+% of the GNU General Public License as published by the Free Software Foundation,
+% either version 3 of the License, or (at your option) any later version.
+
 % I do not claim ownership of the sample image used, as it is credited
 % to Bernard Hermant on Unsplash linked here:
 % https://unsplash.com/@bernardhermant
