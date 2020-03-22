@@ -2,7 +2,7 @@
     "latex-workshop.view.outline.sections": [
         "part",
         "chapter",
-        "section|tocsection",
+        "section|unnumsection",
         "subsection",
         "subsubsection"
     ],
