@@ -302,7 +302,7 @@
 
 \DeclareRobustCommand\vttfamily{%
   \not@math@alphabet\vttfamily\relax
-  \fontfamily{cmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
+  \fontfamily{lmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
   \selectfont
 }
 \DeclareTextFontCommand{\textvtt}{\vttfamily}
