@@ -10,9 +10,9 @@
 % As copyright holder, I make no restriction on the output produced with
 % the templates and only wish to apply the license to the modified versions
 % of the TeX template files. You are free to modify the sample files and
-% publish the generated output (e.g. PDF files), however, should you
-% publish a modified version of the source files, you must abide by the terms
-% of the GNU General Public License as published by the Free Software Foundation,
+% publish the generated output (e.g. PDF files) without providing a copy of the source, 
+% however, should you publish a modified version of the source files, you must abide 
+% by the terms of the GNU General Public License as published by the Free Software Foundation,
 % either version 3 of the License, or (at your option) any later version.
 
 % I do not claim ownership of the sample image used, as it is credited
