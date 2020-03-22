@@ -130,16 +130,13 @@
   \fontdimen7\font=.167em\relax
 }
 
-\makeatletter
 \DeclareRobustCommand\vttfamily{%
   \not@math@alphabet\vttfamily\relax
   \fontfamily{cmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
   \selectfont
 }
 \DeclareTextFontCommand{\textvtt}{\vttfamily}
-\makeatother
 
-\makeatletter
 \newtoks\author@toks\newcounter{author@counter}%
 \setcounter{author@counter}{0}%
 \newcommand{\addAuthor}[1]{%
@@ -167,4 +164,3 @@
 	\the\author@toks%
 	\endgroup
 }
-\makeatother

@@ -2,7 +2,7 @@
     "latex-workshop.view.outline.sections": [
         "part",
         "chapter",
-        "section|definitionofterms|literaturecited",
+        "section|tocsection",
         "subsection",
         "subsubsection"
     ],

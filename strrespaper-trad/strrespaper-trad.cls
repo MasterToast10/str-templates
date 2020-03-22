@@ -204,10 +204,18 @@
 	\newpage
 }
 
+\def\unnumsection{\@ifstar\@unnumsection\@@unnumsection}
+\def\@unnumsection#1{
+	\section*{#1}
+}
+\def\@@unnumsection#1{
+	\clearpage\phantomsection
+	\section*{#1}
+	\addcontentsline{toc}{section}{#1}
+}
+
 \newcommand{\makeapprovalsheet}{
-	\phantomsection
-	\addcontentsline{toc}{section}{APPROVAL SHEET}
-	\section*{Approval Sheet}
+	\unnumsection*{APPROVAL SHEET}
 	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
 	\vspace*{3\baselineskip}
@@ -255,17 +263,13 @@
 }
 
 \newcommand{\makeacknowledgement}[1]{
-	\phantomsection
-	\addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
-	\section*{Acknowledgement}
+	\unnumsection*{ACKNOWLEDGEMENT}
 	#1
 	\newpage
 }
 
 \newcommand{\makeabstract}[1]{
-	\phantomsection
-	\addcontentsline{toc}{section}{ABSTRACT}	
-	\section*{Abstract}
+	\unnumsection{ABSTRACT}
 	{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
 	\vspace*{2\baselineskip}\\
 	Adviser: {\bf \the\adviser}	
@@ -275,20 +279,13 @@
 	\newpage
 }
 
-\newcommand{\definitionofterms}{
-	\phantomsection
-	\section*{Definition of Terms}
-	\addcontentsline{toc}{section}{DEFINITION OF TERMS}
-}
 \newcommand{\termdef}[2]{
     \par \hangindent=1em \hangafter=1 \noindent  
     \textbf{#1}\hspace{2\wordsep}--\hspace{2\wordsep}#2
 }
 
 \newcommand{\literaturecited}{
-	\phantomsection
-	\section*{Literature Cited}
-	\addcontentsline{toc}{section}{LITERATURE CITED}
+	\unnumsection{LITERATURE CITED}
 	\printbibliography[heading=none]
 }
 
@@ -303,16 +300,13 @@
   \fontdimen7\font=.167em\relax
 }
 
-\makeatletter
 \DeclareRobustCommand\vttfamily{%
   \not@math@alphabet\vttfamily\relax
   \fontfamily{cmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
   \selectfont
 }
 \DeclareTextFontCommand{\textvtt}{\vttfamily}
-\makeatother
 
-\makeatletter
 \newtoks\author@toks\newcounter{author@counter}%
 \setcounter{author@counter}{0}%
 \newcommand{\addAuthor}[1]{%
@@ -343,4 +337,3 @@
 	\MakeUppercase{\the\author@toks}%
 	\endgroup
 }
-\makeatother
