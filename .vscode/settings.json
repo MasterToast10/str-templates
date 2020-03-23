@@ -15,5 +15,6 @@
         "-y=defaultIndent: '%INDENT%'",
         "-l"
     ],
-    "todo-tree.regex.regex": "((%|//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])"
+    "todo-tree.regex.regex": "((%|//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "ltex.language": "en-CA"
 }
