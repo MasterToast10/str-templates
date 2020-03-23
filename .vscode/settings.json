@@ -4,7 +4,9 @@
         "chapter",
         "section|unnumsection",
         "subsection",
-        "subsubsection"
+        "subsubsection",
+        "paragraph",
+        "subparagraph"
     ],
     "latex-workshop.latexindent.args": [
         "-c",

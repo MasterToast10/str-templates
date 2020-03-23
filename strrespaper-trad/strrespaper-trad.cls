@@ -168,11 +168,11 @@
 	\titleformat{\subsubsection}{\itshape \singlespacing}{}{0pt}{}
 	\titlespacing{\subsubsection}{0.5em}{0pt}{6pt}
 
-	\titleformat{\paragraph}[display]{\bfseries \singlespacing}{}{-\baselineskip}{}
-	\titlespacing{\paragraph}{0pt}{0.5\baselineskip}{0pt}
+	\titleformat{\paragraph}[runin]{\bfseries}{}{0pt}{}[.]
+	\titlespacing{\paragraph}{2em}{0pt}{\wordsep}
 
-	\titleformat{\subparagraph}{\itshape \singlespacing}{}{0pt}{}
-	\titlespacing{\subparagraph}{0.5em}{0pt}{6pt}
+	\titleformat{\subparagraph}[runin]{\bfseries\itshape}{}{0pt}{}[.]
+	\titlespacing{\subparagraph}{2em}{0pt}{\wordsep}
 }
 
 \newcommand{\appendixheaders}{
