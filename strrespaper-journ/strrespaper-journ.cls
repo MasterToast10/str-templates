@@ -116,7 +116,16 @@
     \titlespacing{\section}{0pt}{0pt}{0pt}
     
     \titleformat{\subsection}[block]{\bfseries}{}{0pt}{}
-	\titlespacing{\subsection}{0pt}{0pt}{0pt}
+    \titlespacing{\subsection}{0pt}{0pt}{0pt}
+    
+    \titleformat{\subsubsection}{\bfseries\itshape}{}{0pt}{}
+	\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+
+	\titleformat{\paragraph}[runin]{\bfseries}{}{0pt}{}[.]
+	\titlespacing{\paragraph}{2em}{0pt}{\wordsep}
+
+	\titleformat{\subparagraph}[runin]{\bfseries\itshape}{}{0pt}{}[.]
+	\titlespacing{\subparagraph}{2em}{0pt}{\wordsep}
 }
 
 % Hyphenation within TypeWriter Fonts
