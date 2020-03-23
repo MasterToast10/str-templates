@@ -166,11 +166,11 @@
     \titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
 	\titlespacing{\section}{0pt}{0pt}{0.5\baselineskip}
 
-	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{-\baselineskip}{}
+	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{0pt}{}
 	\titlespacing{\subsection}{0pt}{0.5\baselineskip}{0pt}
 	
 	\titleformat{\subsubsection}{\itshape \singlespacing}{}{0pt}{}
-	\titlespacing{\subsubsection}{0.5em}{0pt}{6pt}
+	\titlespacing{\subsubsection}{0.5em}{0pt}{0pt}
 
 	\titleformat{\paragraph}[runin]{\bfseries}{}{0pt}{}[.]
 	\titlespacing{\paragraph}{2em}{0pt}{\wordsep}
