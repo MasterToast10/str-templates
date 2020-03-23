@@ -1,8 +1,8 @@
 {
     "latex-workshop.view.outline.sections": [
         "part",
-        "chapter",
-        "section|unnumsection",
+        "chapter|unnumchapter",
+        "section",
         "subsection",
         "subsubsection",
         "paragraph",

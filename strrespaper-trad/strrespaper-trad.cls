@@ -99,21 +99,17 @@
 	\renewcommand{\cftafterlottitle}{\hfill\bf Page \hspace{\contentsadjust}}
 	
 	\renewcommand\cftsecaftersnum{:}	
-	\section*{Table of Contents}
+	\unnumchapter*{Table of Contents}
 	\vspace{-\baselineskip}\tableofcontents
 	\thispagestyle{fancy}
 	\newpage
 	
-	\phantomsection
-	\addcontentsline{toc}{section}{List of Figures}
-	\section*{List of Figures}
+	\unnumchapter{List of Figures}
 	\listoffigures
 	\thispagestyle{fancy}
 	\newpage
 	
-	\phantomsection
-	\addcontentsline{toc}{section}{List of Tables}
-	\section*{List of Tables}
+	\unnumchapter{List of Tables}
 	\listoftables
 	\thispagestyle{fancy}
 	\newpage
@@ -124,15 +120,13 @@
         \normalsize\bf ~Listing \hfill \hspace{\contentsadjust} Title \hfill Page \hspace{\contentsadjust}
     }    
 
-    \phantomsection
-	\addcontentsline{toc}{section}{List of Listings}
-	\section*{List of Listings}
+    \unnumchapter{List of Listings}
     \lstlistoflistings
     \thispagestyle{fancy}
     \newpage
 }
 
-\newcommand{\frontmatter}{\pagenumbering{roman} \frontheaders}
+\newcommand{\frontmatter}{\pagenumbering{roman} \frontheaders \renamesectochap}
 
 \newcommand{\mainmatter}{\pagenumbering{arabic} \doublespace \initheaders}
 
@@ -142,6 +136,16 @@
     \gdef\thesection{APPENDIX \@Alph\c@section}
 	\gdef\sectionbreak{\clearpage}
 	\appendixheaders
+}
+
+\newcommand{\renamesectochap}{
+	\let\oldsection\section
+	\let\oldsubsection\subsection
+	\let\oldsubsubsection\subsubsection
+
+	\let\chapter\oldsection
+	\let\section\oldsubsection
+	\let\subsection\oldsubsubsection
 }
 
 \newcommand{\sectionbreak}{\clearpage}
@@ -204,18 +208,18 @@
 	\newpage
 }
 
-\def\unnumsection{\@ifstar\@unnumsection\@@unnumsection}
-\def\@unnumsection#1{
-	\section*{#1}
+\def\unnumchapter{\@ifstar\@unnumchapter\@@unnumchapter}
+\def\@unnumchapter#1{
+	\chapter*{#1}
 }
-\def\@@unnumsection#1{
+\def\@@unnumchapter#1{
 	\clearpage\phantomsection
-	\section*{#1}
+	\chapter*{#1}
 	\addcontentsline{toc}{section}{#1}
 }
 
 \newcommand{\makeapprovalsheet}{
-	\unnumsection*{APPROVAL SHEET}
+	\unnumchapter*{APPROVAL SHEET}
 	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
 	\vspace*{3\baselineskip}
@@ -263,13 +267,13 @@
 }
 
 \newcommand{\makeacknowledgement}[1]{
-	\unnumsection*{ACKNOWLEDGEMENT}
+	\unnumchapter*{ACKNOWLEDGEMENT}
 	#1
 	\newpage
 }
 
 \newcommand{\makeabstract}[1]{
-	\unnumsection{ABSTRACT}
+	\unnumchapter{ABSTRACT}
 	{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
 	\vspace*{2\baselineskip}\\
 	Adviser: {\bf \the\adviser}	
@@ -285,7 +289,7 @@
 }
 
 \newcommand{\literaturecited}{
-	\unnumsection{LITERATURE CITED}
+	\unnumchapter{LITERATURE CITED}
 	\printbibliography[heading=none]
 }
 

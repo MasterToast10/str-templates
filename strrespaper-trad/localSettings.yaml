@@ -230,24 +230,24 @@ indentAfterHeadings:
     chapter: 
        indentAfterThisHeading: 1
        level: 2
+    unnumchapter:
+        indentAfterThisHeading: 1
+        level: 2
+    frontmatter:
+        indentAfterThisHeading: 0
+        level: 2
+    mainmatter:
+        indentAfterThisHeading: 1
+        level: 2
+    literaturecited:
+        indentAfterThisHeading: 1
+        level: 2
+    appendix:
+        indentAfterThisHeading: 1
+        level: 2
     section:
        indentAfterThisHeading: 1
        level: 3
-    appendix:
-        indentAfterThisHeading: 1
-        level: 3
-    mainmatter:
-        indentAfterThisHeading: 1
-        level: 3
-    definitionofterms:
-        indentAfterThisHeading: 1
-        level: 3
-    literaturecited:
-        indentAfterThisHeading: 1
-        level: 3
-    definitionofterms:
-        indentAfterThisHeading: 1
-        level: 3
     subsection:
        indentAfterThisHeading: 1
        level: 4
@@ -290,7 +290,7 @@ noAdditionalIndent:
 indentRules:
    myenvironment: "\t\t"
    anotherenvironment: "\t\t\t\t"
-   chapter: " "
+   chapter: "\t"
    section: "\t"
    item: "      "
    myitem: "        "
