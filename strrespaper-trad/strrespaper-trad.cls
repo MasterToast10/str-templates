@@ -53,14 +53,15 @@
 
 \RequirePackage[font=normalsize]{caption}
 
-\captionsetup[table]{
-    textfont=it,
-    labelsep=newline
-}
-\captionsetup[figure]{
-	textformat=period,
+\captionsetup{
 	labelfont=it,
-    labelsep=period
+	labelsep=period,
+	textformat=period
+}
+\captionsetup[table]{
+	labelfont=default,
+	textfont=it,
+	textformat=simple
 }
 
 \expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
