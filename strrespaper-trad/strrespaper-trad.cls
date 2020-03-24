@@ -38,7 +38,8 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
-\RequirePackage{titlesec, titletoc, tocloft}
+\RequirePackage{textcase}
+\RequirePackage{titlesec, tocloft}
 \RequirePackage[normalem]{ulem}
 
 \RequirePackage{hyperref}
@@ -173,7 +174,7 @@
 \renewcommand{\thesubsection}{}
 
 \newcommand{\frontheaders}{
-	\titleformat{\section}[block]{\bfseries\centering \singlespacing}{}{0pt}{\MakeUppercase}
+	\titleformat{\section}[block]{\bfseries\centering \singlespacing}{}{0pt}{\MakeTextUppercase}
 	\titlespacing*{\section}{0pt}{0pt}{0.5\baselineskip}
 }
 
@@ -182,7 +183,7 @@
 }
 
 \newcommand{\initheaders}{
-	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
+	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeTextUppercase}
 	\titlespacing{\section}{0pt}{0pt}{0.5\baselineskip}
 
 	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{0pt}{}
@@ -199,7 +200,7 @@
 }
 
 \newcommand{\appendixheaders}{
-	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\MakeUppercase{\thesection}}{0pt}{\MakeUppercase}
+	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\MakeTextUppercase{\thesection}}{0pt}{\MakeTextUppercase}
 	\titlespacing{\section}{0pt}{12pt}{0pt}
 }
 
@@ -211,7 +212,7 @@
 		\vspace*{12\baselineskip}
 		
 		A research paper submitted to the\\
-		Faculty of the Philippine Science High School-\\
+		Faculty of the Philippine Science High School--\\
 		Cordillera Administrative Region Campus\\
 		in fulfillment of the course requirements in\\
 		Science, Technology, Engineering and Mathematics Research\\
@@ -237,63 +238,36 @@
 	\addcontentsline{toc}{section}{#1}
 }
 
-\newcommand{\makeapprovalsheet}{
+\newcommand{\signatureline}[2]{
+	\vspace*{3\baselineskip}
+	\MakeTextUppercase{#1}\\#2\\
+}
+\newcommand{\makeapprovalsheet}[1]{
 	\unnumchapter*{APPROVAL SHEET}
 	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
-	\vspace*{3\baselineskip}
-	
 	\begin{center}
-		\MakeUppercase{\the\adviser}\\
-		Research Adviser\\
+		\signatureline{\the\adviser}{Research Adviser}
 		
 		\vspace*{4\baselineskip}
 		
 		This research paper is hereby accepted by the Research Council.
 		
-		\vspace*{3\baselineskip}
-		CONRADO C. ROTOR, Jr., Ph.D.\\
-		Chair\\
-		
-		\vspace*{3\baselineskip}
-		MELBA C. PATACSIL\\
-		Co-chair\\
-		
-		\vspace*{4\baselineskip}
-		\begin{multicols}{2}
-			\begin{center}
-				JAY JAY F. MANUEL\\
-				Member\\
-				
-				\vspace*{3\baselineskip}
-				
-				RICARIDO M. SATURAY, JR.\\
-				Member\\
-				
-				\columnbreak
-				
-				MARITES P. RIVERA\\
-				Member\\
-				
-				\vspace*{3\baselineskip}
-				
-				FREDA M. WONG\\
-				Member\\
-			\end{center}
-		\end{multicols}
-		\newpage
+		#1
 	\end{center}
+	\newpage
 }
 
 \newcommand{\makeacknowledgement}[1]{
 	\unnumchapter*{ACKNOWLEDGEMENT}
+
 	#1
 	\newpage
 }
 
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title"
+	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title"
 	\vspace*{2\baselineskip}\\
 	Adviser: {\bf \the\adviser}	
 	\\
@@ -357,6 +331,6 @@
 \newcommand{\tpauthors}{%
 	\begingroup
 	\def\@elt##1{\\}%
-	\MakeUppercase{\the\author@toks}%
+	\MakeTextUppercase{\the\author@toks}%
 	\endgroup
 }
