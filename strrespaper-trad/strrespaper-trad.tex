@@ -93,7 +93,7 @@
 		\textquote[\autocite{thecharlesworthgroupWhatIncludeYour2020}]{%
 			For academic theses, there is no right or wrong way to acknowledge people, and who you want to acknowledge is down to personal preference.
 			However, the common types of people authors acknowledge in their academic theses include: Their supervisor’s contributions, the research group (especially if the thesis in question is a master’s and the work is helped along by a PhD student), the support staff (laboratory technicians etc.), any students who undertook side projects with them (e.g. final year undergraduates, summer students, master’s students), administrative staff (there can be a lot of bureaucracy for thesis submissions), [\dots], their funding bodies, any collaboration with industry and the people they worked with at said establishment(s), friends, colleagues, and family%
-	}
+		}
 	}
 
 	% TODO: Abstract
@@ -157,7 +157,7 @@
 				It provides details to the reader on how the study will contribute to society such as what the study will contribute and who will benefit from it.
 				It also includes an explanation of the work’s importance as well as its potential benefits.
 				It is sometimes called rationale.%
-			} 
+			}
 
 			Always keep in mind the main stakeholders that are affected by the problem that you tackle in the study.
 			List down the major benefits of your study to your stakeholders.
@@ -316,7 +316,7 @@
 			\end{itemize}
 			In the conclusion, the key findings of each related literature should be summarized with emphasis on their significance to the research \autocite{mccombesLiteratureReviewComplete2019}.
 
-	\chapter{MATERIALS AND METHODS}
+	\chapter{MATERIALS AND METHODS} \label{chp:materials_and_methods}
 		\section{Research Design}
 			% TODO: Research Design
 			\textcite{labareeTypesResearchDesigns2020} states: \textquote[][.]{The function of a research design is to ensure that the evidence obtained enables you to effectively address the research problem logically and as unambiguously as possible}.
@@ -364,7 +364,13 @@
 
 	\chapter{RESULTS AND DISCUSSION}
 		% TODO: Results and Discussion
-		\paragraph{Results}
+		\textquote[\autocite{skillsyouneed.comDissertationWritingResults2020}]{The Results section should set out your key experimental results, including any statistical analysis and whether or not the results of these are significant}.
+
+		Cite literature that support your analyses of the results.
+		It is imperative to include relevant results, regardless of support of hypotheses.
+		Brief descriptions of the results should be provided when clarification is needed.
+
+		\subsection*{Softening Points}
 			\blindtext
 			\begin{figure}[ht]
 				\centering
@@ -437,15 +443,20 @@
 			Take advantage of citations with \BibLaTeX{} like so: \fullcite[182--183]{ruanDoesWritingSystem2018}.
 			More examples are in the \href{http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf}{\texttt{biblatex-cheatsheet} on CTAN}.
 
-			\blindtext
-
 			\vspace{-\baselineskip}
 			\begin{align}
-				E    & = mc^2 \label{eq:meeq}                                \\
-				x(t) & = \int_{-B}^{B} X(f)e^{j 2\pi f t}~df \label{eq:samp}
+				\label{eq:meeq}
+				E^2  & = (mc^2)^2 + (pc)^2                   \\
+				\label{eq:samp}
+				x(t) & = \int_{-B}^{B} X(f)e^{j 2\pi f t}~df
 			\end{align}
 
-			The solution to Equation~\ref{eq:meeq} is Equation~\ref{eq:samp} and is shown in Figure~\ref{fig:samplebargraph} and Table~\ref{tab:sample_characteristics} \autocite{al-shemmeriWindTurbines2010} (Listing~\ref{lst:game.py}).
+			One may refer to figures within this section or in the appendix, similar to the following: % However, the following demonstration might be overkill.
+			\blockquote{\textcite{al-shemmeriWindTurbines2010} states that the solution to Equation~\ref{eq:meeq} is Equation~\ref{eq:samp} and is shown in Figure~\ref{fig:samplebargraph} and Table~\ref{tab:sample_characteristics}  (Listing~\ref{lst:game.py}).}
+			One may also refer to appendices similar to the following:
+			\blockquote{Relevant documentation is included in \href{apx:documentation}{Appendix}.}
+			Although unconventional, if need be, one may reference another chapter like so:
+			\blockquote{As detailed in \href{chp:materials_and_methods}{Chapter 3}\ref{chp:materials_and_methods} on page~\pageref{chp:materials_and_methods}\dots}
 
 	\chapter{CONCLUSION AND RECOMMENDATIONS}
 		% TODO: Conclusion and Recommendations
@@ -648,7 +659,7 @@
 			\end{tabular}
 		\end{table}
 
-	\chapter{DOCUMENTATION}
+	\chapter{DOCUMENTATION} \label{apx:documentation}
 		% TODO: Documentation
 		\begin{figure}[htbp]
 			\centering
