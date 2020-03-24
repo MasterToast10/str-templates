@@ -39,7 +39,7 @@
 \RequirePackage{multicol}
 \RequirePackage{setspace}
 \RequirePackage{titlesec, titletoc, tocloft}
-\RequirePackage
+\RequirePackage[normalem]{ulem}
 
 \RequirePackage{hyperref}
 
@@ -293,7 +293,7 @@
 
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
+	{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title"
 	\vspace*{2\baselineskip}\\
 	Adviser: {\bf \the\adviser}	
 	\\
