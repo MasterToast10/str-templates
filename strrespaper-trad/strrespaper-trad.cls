@@ -146,9 +146,14 @@
 \renewcommand{\appendix}{
 	\setcounter{section}{0}%
 	\setcounter{subsection}{0}%
-    \gdef\thesection{APPENDIX \@Alph\c@section}
+    \gdef\thesection{Appendix \@Alph\c@section}
 	\gdef\sectionbreak{\clearpage}
 	\appendixheaders
+	\clearpage\phantomsection
+	\addcontentsline{toc}{section}{APPENDICES}
+	\addtocontents{toc}{\begingroup\string\makeatletter\global\let\string\l@section\string\l@subsection\endgroup}
+	\addtocontents{toc}{\protect\setlength{\cftsubsecnumwidth}{5.5em}}
+	\addtocontents{toc}{\protect\def\protect\cftsubsecaftersnum{:}}
 }
 
 \newcommand{\renamesectochap}{
@@ -193,7 +198,7 @@
 }
 
 \newcommand{\appendixheaders}{
-	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\thesection}{0pt}{\MakeUppercase}
+	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\MakeUppercase{\thesection}}{0pt}{\MakeUppercase}
 	\titlespacing{\section}{0pt}{12pt}{0pt}
 }
 
