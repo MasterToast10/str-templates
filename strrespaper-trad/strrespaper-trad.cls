@@ -51,6 +51,18 @@
 	urlcolor=black
 }
 
+\RequirePackage[font=normalsize]{caption}
+
+\captionsetup[table]{
+    textfont=it,
+    labelsep=newline
+}
+\captionsetup[figure]{
+	textformat=period,
+	labelfont=it,
+    labelsep=period
+}
+
 \expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
   \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
   \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%

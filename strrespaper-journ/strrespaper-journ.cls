@@ -66,6 +66,7 @@
     labelsep=newline
 }
 \captionsetup[figure]{
+	textformat=period,
     labelfont=it,
     labelsep=period
 }
