@@ -64,13 +64,15 @@
 	textformat=simple
 }
 
-\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
-  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
-  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
-  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
-  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
-  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
-  \do\Y\do\Z}
+\expandafter\def\expandafter\UrlBreaks\expandafter{
+	\UrlBreaks%  save the current one
+	\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+	\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+	\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+	\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+	\do\Y\do\Z
+}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -129,14 +131,14 @@
 }
 
 \newcommand{\listoflistings}{
-    \renewcommand{\lstlistlistingname}{
-        \normalsize\bf ~Listing \hfill \hspace{\contentsadjust} Title \hfill Page \hspace{\contentsadjust}
-    }    
+	\renewcommand{\lstlistlistingname}{
+		\normalsize\bf ~Listing \hfill \hspace{\contentsadjust} Title \hfill Page \hspace{\contentsadjust}
+	}
 
-    \unnumchapter{List of Listings}
-    \lstlistoflistings
-    \thispagestyle{fancy}
-    \newpage
+	\unnumchapter{List of Listings}
+	\lstlistoflistings
+	\thispagestyle{fancy}
+	\newpage
 }
 
 \newcommand{\frontmatter}{\pagenumbering{roman} \frontheaders \renamesectochap}
@@ -146,7 +148,7 @@
 \renewcommand{\appendix}{
 	\setcounter{section}{0}%
 	\setcounter{subsection}{0}%
-    \gdef\thesection{APPENDIX \@Alph\c@section}
+	\gdef\thesection{APPENDIX \@Alph\c@section}
 	\gdef\sectionbreak{\clearpage}
 	\appendixheaders
 }
@@ -176,7 +178,7 @@
 }
 
 \newcommand{\initheaders}{
-    \titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
+	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
 	\titlespacing{\section}{0pt}{0pt}{0.5\baselineskip}
 
 	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{0pt}{}
@@ -297,8 +299,8 @@
 }
 
 \newcommand{\termdef}[2]{
-    \par \hangindent=1em \hangafter=1 \noindent  
-    \textbf{#1}\hspace{2\wordsep}--\hspace{2\wordsep}#2
+	\par \hangindent=1em \hangafter=1 \noindent  
+	\textbf{#1}\hspace{2\wordsep}--\hspace{2\wordsep}#2
 }
 
 \newcommand{\literaturecited}{
@@ -310,17 +312,17 @@
 \RequirePackage{letltxmacro}
 \LetLtxMacro\origttfamily\ttfamily
 \DeclareRobustCommand*{\ttfamily}{%
-  \origttfamily
-  \hyphenchar\font=`\-\relax
-  \fontdimen3\font=.25em\relax
-  \fontdimen4\font=.167em\relax
-  \fontdimen7\font=.167em\relax
+	\origttfamily
+	\hyphenchar\font=`\-\relax
+	\fontdimen3\font=.25em\relax
+	\fontdimen4\font=.167em\relax
+	\fontdimen7\font=.167em\relax
 }
 
 \DeclareRobustCommand\vttfamily{%
-  \not@math@alphabet\vttfamily\relax
-  \fontfamily{lmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
-  \selectfont
+	\not@math@alphabet\vttfamily\relax
+	\fontfamily{lmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
+	\selectfont
 }
 \DeclareTextFontCommand{\textvtt}{\vttfamily}
 
