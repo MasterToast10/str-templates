@@ -19,6 +19,9 @@
 
 % For units
 \usepackage{siunitx}
+\sisetup{
+	separate-uncertainty=true
+}
 
 % TODO: Feel free to remove once your remove all the dummy text
 \usepackage{blindtext} 
@@ -85,12 +88,12 @@
 					\label{tab:concise_table}
 					\begin{tabular}{cccc}
 						\toprule
-						Criteria Number & A (units)       & B (units)       & C (units)       \\
+						Criteria Number & A (\si{\celsius}) & B (\si{\kilo\meter}) & C (\si{\ampere}) \\
 						\midrule
-						1               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
-						2               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
-						3               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
-						4               & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 & 1 \(\pm \) 0.01 \\
+						1               & \num{1.00(1)}     & \num{1.00(1)}        & \num{1.00(1)}    \\
+						2               & \num{1.00(1)}     & \num{1.00(1)}        & \num{1.00(1)}    \\
+						3               & \num{1.00(1)}     & \num{1.00(1)}        & \num{1.00(1)}    \\
+						4               & \num{1.00(1)}     & \num{1.00(1)}        & \num{1.00(1)}    \\
 						\bottomrule
 					\end{tabular}
 					\begin{tablenotes}
