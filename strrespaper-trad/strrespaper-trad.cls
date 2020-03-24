@@ -167,7 +167,7 @@
 \renewcommand{\thesubsection}{}
 
 \newcommand{\frontheaders}{
-	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
+	\titleformat{\section}[block]{\bfseries\centering \singlespacing}{}{0pt}{\MakeUppercase}
 	\titlespacing*{\section}{0pt}{0pt}{0.5\baselineskip}
 }
 
