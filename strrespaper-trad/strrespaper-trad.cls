@@ -95,6 +95,7 @@
 \setlength{\headheight}{15pt}
 
 \newcommand{\contents}{
+	\clearpage
 	\contentsheaders
 
 	\setcounter{tocdepth}{2}
@@ -205,27 +206,27 @@
 }
 
 \renewcommand{\maketitle}{
-	\thispagestyle{empty}
-	\begin{center}
-		\the\tptitle\\
-		
-		\vspace*{12\baselineskip}
-		
-		A research paper submitted to the\\
-		Faculty of the Philippine Science High School--\\
-		Cordillera Administrative Region Campus\\
-		in fulfillment of the course requirements in\\
-		Science, Technology, Engineering and Mathematics Research\\
-		
-		\vspace*{10\baselineskip}
-		
-		\tpauthors
-		
-		\vfill
-		
-		\@date
-	\end{center}
-	\newpage
+	\begin{titlepage}
+		\begin{center}
+			\the\tptitle\\
+			
+			\vspace*{12\baselineskip}
+			
+			A research paper submitted to the\\
+			Faculty of the Philippine Science High School--\\
+			Cordillera Administrative Region Campus\\
+			in fulfillment of the course requirements in\\
+			Science, Technology, Engineering and Mathematics Research\\
+			
+			\vspace*{10\baselineskip}
+			
+			\tpauthors
+			
+			\vfill
+			
+			\@date
+		\end{center}
+	\end{titlepage}
 }
 
 \def\unnumchapter{\@ifstar\@unnumchapter\@@unnumchapter}
@@ -243,6 +244,7 @@
 	\MakeTextUppercase{#1}\\#2\\
 }
 \newcommand{\makeapprovalsheet}[1]{
+	\clearpage
 	\unnumchapter*{APPROVAL SHEET}
 	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
@@ -255,25 +257,23 @@
 		
 		#1
 	\end{center}
-	\newpage
 }
 
 \newcommand{\makeacknowledgement}[1]{
+	\clearpage
 	\unnumchapter*{ACKNOWLEDGEMENT}
 
 	#1
-	\newpage
 }
 
 \newcommand{\makeabstract}[1]{
+	\clearpage
 	\unnumchapter{ABSTRACT}
 	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title"
 	\vspace*{2\baselineskip}\\
 	Adviser: {\bf \the\adviser}	
 	\\
 	#1
-	
-	\newpage
 }
 
 \newcommand{\termdef}[2]{
