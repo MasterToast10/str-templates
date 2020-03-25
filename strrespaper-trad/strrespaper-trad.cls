@@ -257,6 +257,7 @@
 	#1
 }
 
+\newcommand{\keywords}[1]{\\[\baselineskip]\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
 	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]

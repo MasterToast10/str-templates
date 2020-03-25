@@ -96,6 +96,18 @@
 } 
 % Delete up to here if title page has no revisions
 
+% TODO: If abstract has revisions, edit this (e.g. uncomment \keywords). Otherwise, delete completely
+\makeatletter
+\renewcommand{\makeabstract}[1]{
+	\unnumchapter{ABSTRACT}
+	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	Adviser: {\bf \the\adviser}	\\
+	#1
+	% \keywords{keywords; of; the; research}
+} 
+\makeatother 
+% Delete up to here if abstract has no revisions
+
 \begin{document}
 	\maketitle
 
