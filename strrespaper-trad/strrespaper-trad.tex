@@ -55,7 +55,7 @@
  
 \title{RESEARCH PROJECT TITLE} % TODO: Put your proper title here
 \dayofmonth{13} % TODO: Day of month (Depends on prof)
-\date{May 2019} % TODO: Date (MMMMM-YYYY; Also depends on prof)
+\date{May 2020} % TODO: Date (MMMM-YYYY; Also depends on prof)
 
 \tptitle{
 	(UPPERCASE except for \textit{Scientific names}) \\
@@ -68,7 +68,7 @@
 \addAuthor{Scholar N. Bayan}
 
 \adviser{Adviser C. Adviser} % TODO: Name of adviser
-\level{3} % TODO: STR Year Level
+\level{1} % TODO: STR Year Level
 
 
 % TODO: Setup for PDF Metadata (pdfauthor and pdfkeywords)
@@ -80,13 +80,58 @@
 }
 \makeatother
 
+% TODO: If title page has revisions, edit this. Otherwise, delete completely.
+\renewcommand{\maketitle}{
+	\begin{titlepage}
+		\vspace*{12\baselineskip}
+			
+		A research paper submitted to the\\
+		Faculty of the Philippine Science High School--\\
+		Cordillera Administrative Region Campus\\
+		in fulfillment of the course requirements in\\
+		Science, Technology, Engineering and Mathematics Research\\
+			
+		\vspace*{10\baselineskip}
+	\end{titlepage}
+} 
+% Delete up to here if title page has no revisions
+
+% TODO: If abstract has revisions, edit this (e.g. uncomment \keywords). Otherwise, delete completely.
+\makeatletter
+\renewcommand{\makeabstract}[1]{
+	\unnumchapter{ABSTRACT}
+	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	Adviser: {\bf \the\adviser}	\\
+	#1
+	% \keywords{keywords; of; the; research}
+} 
+\makeatother 
+% Delete up to here if abstract has no revisions
 
 \begin{document}
 	\maketitle
 
 	\frontmatter
 
-	\makeapprovalsheet
+	\makeapprovalsheet{
+		\signatureline{Conrado C. Rotor, \NoCaseChange{Jr., Ph.D.}}{Chair}
+
+		\signatureline{Melba C. Patacsil}{Co-chair}
+
+		\vspace*{\baselineskip}
+
+		\begin{multicols}{2}
+			\begin{center}
+				\signatureline{Jay Jay F. Manuel}{Member}
+				\signatureline{Ricarido M. Saturay, \NoCaseChange{Jr.}}{Member}
+
+				\columnbreak
+
+				\signatureline{Marites P. Rivera}{Member}
+				\signatureline{Freda M. Wong}{Member}
+			\end{center}
+		\end{multicols}
+	}
 
 	% TODO: Acknowledgement
 	\makeacknowledgement{
@@ -316,7 +361,7 @@
 			\end{itemize}
 			In the conclusion, the key findings of each related literature should be summarized with emphasis on their significance to the research \autocite{mccombesLiteratureReviewComplete2019}.
 
-	\chapter{MATERIALS AND METHODS} \label{chp:materials_and_methods}
+	\chapter{MATERIALS AND METHODS}
 		\section{Research Design}
 			% TODO: Research Design
 			\textcite{labareeTypesResearchDesigns2020} states: \textquote[][.]{The function of a research design is to ensure that the evidence obtained enables you to effectively address the research problem logically and as unambiguously as possible}.
@@ -348,7 +393,11 @@
 					\blindtext
 					\subparagraph{I am a subparagraph}
 						\blindtext
-
+				\paragraph{Supplementary information}
+					Hyphens are for putting together compound words such as \textit{self-love}, \textit{twenty-one}, and \textit{child-friendly}.
+					En dashes are for less-awkward compounding of words such as \textit{Bruce Lee--style fighting} and \textit{post--World War II paintings}, as well as for denoting ranges such as \textit{April--May}.
+					Em dashes are for slight pauses (stronger than a comma but weaker than a period or semicolon), parenthetical information (such as \enquote{the boy---who loved to play---walked around the park}), emphasis (such as \enquote{there she sits---my missing porcelain doll}), and sudden interruption (such as \enquote{I meant to say I l---}).
+					Through practice, a writer can be effective by using these symbols properly. \autocite{grammarly.comWhatDifferenceDashes2016}.
 
 		\section{Treatment of Data}
 			% TODO: Treatment of Data
@@ -445,18 +494,16 @@
 
 			\vspace{-\baselineskip}
 			\begin{align}
-				\label{eq:meeq}
+				\label{eqn:meeq}
 				E^2  & = (mc^2)^2 + (pc)^2                   \\
-				\label{eq:samp}
+				\label{eqn:samp}
 				x(t) & = \int_{-B}^{B} X(f)e^{j 2\pi f t}~df
 			\end{align}
 
 			One may refer to figures within this section or in the appendix, similar to the following: % However, the following demonstration might be overkill.
-			\blockquote{\textcite{al-shemmeriWindTurbines2010} states that the solution to Equation~\ref{eq:meeq} is Equation~\ref{eq:samp} and is shown in Figure~\ref{fig:samplebargraph} and Table~\ref{tab:sample_characteristics}  (Listing~\ref{lst:game.py}).}
+			\blockquote{\textcite{al-shemmeriWindTurbines2010} states that the solution to Equation~\ref{eqn:meeq} is Equation~\ref{eqn:samp} and is shown in Figure~\ref{fig:samplebargraph} and Table~\ref{tab:sample_characteristics}  (Listing~\ref{lst:game.py}).}
 			One may also refer to appendices similar to the following:
 			\blockquote{Relevant documentation is included in \ref{apx:documentation}.}
-			Although unconventional, if need be, one may reference another chapter like so:
-			\blockquote{As detailed in \ref{chp:materials_and_methods} on page~\pageref{chp:materials_and_methods}\dots}\\
 
 		\section*{Analysis/Discussion}
 			\textquote[\cite{skillsyouneed.comDissertationWritingResults2020}]{
@@ -499,7 +546,7 @@
 
 	\appendix
 
-	\chapter{PROJECT PLAN}
+	\chapter{Project Plan}
 		% TODO: Task Lists and Duration
 		\begin{table}[htbp]
 			\centering
@@ -639,7 +686,7 @@
 			\end{table}
 		\end{landscape}
 
-	\chapter{RAW DATA}
+	\chapter{Raw Data}
 		% TODO: Raw Data
 		\begin{table}[htbp]
 			\centering
@@ -657,7 +704,7 @@
 
 		\lstinputlisting[caption={game.py}, label={lst:game.py}]{../sample/code/game.py}
 
-	\chapter{STATISTICAL TABLES}
+	\chapter{Statistical Tables}
 		% TODO: Statistical Tables
 		\begin{table}[htbp]
 			\centering
@@ -676,7 +723,7 @@
 			\end{tabular}
 		\end{table}
 
-	\chapter{DOCUMENTATION} \label{apx:documentation}
+	\chapter{Documentation} \label{apx:documentation}
 		% TODO: Documentation
 		\begin{figure}[htbp]
 			\centering

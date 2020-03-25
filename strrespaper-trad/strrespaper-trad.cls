@@ -38,7 +38,9 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
-\RequirePackage{titlesec, titletoc, tocloft}
+\RequirePackage{textcase}
+\RequirePackage{titlesec, tocloft}
+\RequirePackage[normalem]{ulem}
 
 \RequirePackage{hyperref}
 
@@ -64,15 +66,13 @@
 	textformat=simple
 }
 
-\expandafter\def\expandafter\UrlBreaks\expandafter{
-	\UrlBreaks%  save the current one
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
 	\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
 	\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
 	\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
 	\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
 	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
-	\do\Y\do\Z
-}
+	\do\Y\do\Z}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -117,17 +117,14 @@
 	\unnumchapter*{Table of Contents}
 	\vspace{-\baselineskip}\tableofcontents
 	\thispagestyle{fancy}
-	\newpage
 	
 	\unnumchapter{List of Figures}
 	\listoffigures
 	\thispagestyle{fancy}
-	\newpage
 	
 	\unnumchapter{List of Tables}
 	\listoftables
 	\thispagestyle{fancy}
-	\newpage
 }
 
 \newcommand{\listoflistings}{
@@ -148,9 +145,13 @@
 \renewcommand{\appendix}{
 	\setcounter{section}{0}%
 	\setcounter{subsection}{0}%
-	\gdef\thesection{APPENDIX \@Alph\c@section}
-	\gdef\sectionbreak{\clearpage}
+	\renewcommand{\thesection}{Appendix \@Alph\c@section}
 	\appendixheaders
+	\clearpage\phantomsection
+	\addcontentsline{toc}{section}{APPENDICES}
+	\addtocontents{toc}{\begingroup\string\makeatletter\global\let\string\l@section\string\l@subsection\endgroup}
+	\addtocontents{toc}{\protect\setlength{\cftsubsecnumwidth}{5.5em}}
+	\addtocontents{toc}{\protect\def\protect\cftsubsecaftersnum{:}}
 }
 
 \newcommand{\renamesectochap}{
@@ -169,7 +170,7 @@
 \renewcommand{\thesubsection}{}
 
 \newcommand{\frontheaders}{
-	\titleformat{\section}[block]{\bfseries\centering \singlespacing}{}{0pt}{\MakeUppercase}
+	\titleformat{\section}[block]{\bfseries\centering \singlespacing}{}{0pt}{\MakeTextUppercase}
 	\titlespacing*{\section}{0pt}{0pt}{0.5\baselineskip}
 }
 
@@ -178,7 +179,7 @@
 }
 
 \newcommand{\initheaders}{
-	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeUppercase}
+	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeTextUppercase}
 	\titlespacing{\section}{0pt}{0pt}{0.5\baselineskip}
 
 	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{0pt}{}
@@ -195,107 +196,73 @@
 }
 
 \newcommand{\appendixheaders}{
-	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\thesection}{0pt}{\MakeUppercase}
+	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\phantomsection\MakeTextUppercase{\thesection}}{0pt}{\MakeTextUppercase}
 	\titlespacing{\section}{0pt}{12pt}{0pt}
 }
 
+\let\oldtitlepage\titlepage
+\let\oldendtitlepage\endtitlepage
+\def\titlepage{
+	\oldtitlepage\center\the\tptitle\\
+}
+\def\endtitlepage{
+	\tpauthors\vfill\@date\endcenter\oldendtitlepage
+}
 \renewcommand{\maketitle}{
-	\thispagestyle{empty}
-	\begin{center}
-		\the\tptitle\\
-		
+	\begin{titlepage}
 		\vspace*{12\baselineskip}
-		
+			
 		A research paper submitted to the\\
-		Faculty of the Philippine Science High School-\\
+		Faculty of the Philippine Science High School--\\
 		Cordillera Administrative Region Campus\\
 		in fulfillment of the course requirements in\\
 		Science, Technology, Engineering and Mathematics Research\\
-		
+			
 		\vspace*{10\baselineskip}
-		
-		\tpauthors
-		
-		\vfill
-		
-		\@date
-	\end{center}
-	\newpage
+	\end{titlepage}
 }
 
 \def\unnumchapter{\@ifstar\@unnumchapter\@@unnumchapter}
 \def\@unnumchapter#1{
-	\chapter*{#1}
+	\sectionbreak\chapter*{#1}
 }
 \def\@@unnumchapter#1{
-	\clearpage\phantomsection
+	\sectionbreak\phantomsection
 	\chapter*{#1}
 	\addcontentsline{toc}{section}{#1}
 }
 
-\newcommand{\makeapprovalsheet}{
+\newcommand{\signatureline}[2]{
+	\vspace*{3\baselineskip}
+	\MakeTextUppercase{#1}\\#2\\
+}
+\newcommand{\makeapprovalsheet}[1]{
 	\unnumchapter*{APPROVAL SHEET}
 	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
-	\vspace*{3\baselineskip}
-	
 	\begin{center}
-		\MakeUppercase{\the\adviser}\\
-		Research Adviser\\
+		\signatureline{\the\adviser}{Research Adviser}
 		
 		\vspace*{4\baselineskip}
 		
 		This research paper is hereby accepted by the Research Council.
 		
-		\vspace*{3\baselineskip}
-		CONRADO C. ROTOR, Jr., Ph.D.\\
-		Chair\\
-		
-		\vspace*{3\baselineskip}
-		MELBA C. PATACSIL\\
-		Co-chair\\
-		
-		\vspace*{4\baselineskip}
-		\begin{multicols}{2}
-			\begin{center}
-				JAY JAY F. MANUEL\\
-				Member\\
-				
-				\vspace*{3\baselineskip}
-				
-				RICARIDO M. SATURAY, JR.\\
-				Member\\
-				
-				\columnbreak
-				
-				MARITES P. RIVERA\\
-				Member\\
-				
-				\vspace*{3\baselineskip}
-				
-				FREDA M. WONG\\
-				Member\\
-			\end{center}
-		\end{multicols}
-		\newpage
+		#1
 	\end{center}
 }
 
 \newcommand{\makeacknowledgement}[1]{
 	\unnumchapter*{ACKNOWLEDGEMENT}
+
 	#1
-	\newpage
 }
 
+\newcommand{\keywords}[1]{\\[\baselineskip]\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School --- Cordillera Administrative Region Campus, \underline{\the\dayofmonth \thickspace \@date}. "\@title"
-	\vspace*{2\baselineskip}\\
-	Adviser: {\bf \the\adviser}	
-	\\
+	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	Adviser: {\bf \the\adviser}	\\
 	#1
-	
-	\newpage
 }
 
 \newcommand{\termdef}[2]{
@@ -353,6 +320,6 @@
 \newcommand{\tpauthors}{%
 	\begingroup
 	\def\@elt##1{\\}%
-	\MakeUppercase{\the\author@toks}%
+	\MakeTextUppercase{\the\author@toks}%
 	\endgroup
 }
