@@ -259,10 +259,8 @@
 
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title"
-	\vspace*{2\baselineskip}\\
-	Adviser: {\bf \the\adviser}	
-	\\
+	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	Adviser: {\bf \the\adviser}	\\
 	#1
 }
 
