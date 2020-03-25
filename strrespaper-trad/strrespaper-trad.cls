@@ -95,7 +95,6 @@
 \setlength{\headheight}{15pt}
 
 \newcommand{\contents}{
-	\clearpage
 	\contentsheaders
 
 	\setcounter{tocdepth}{2}
@@ -118,17 +117,14 @@
 	\unnumchapter*{Table of Contents}
 	\vspace{-\baselineskip}\tableofcontents
 	\thispagestyle{fancy}
-	\newpage
 	
 	\unnumchapter{List of Figures}
 	\listoffigures
 	\thispagestyle{fancy}
-	\newpage
 	
 	\unnumchapter{List of Tables}
 	\listoftables
 	\thispagestyle{fancy}
-	\newpage
 }
 
 \newcommand{\listoflistings}{
@@ -149,8 +145,7 @@
 \renewcommand{\appendix}{
 	\setcounter{section}{0}%
 	\setcounter{subsection}{0}%
-	\gdef\thesection{Appendix \@Alph\c@section}
-	\gdef\sectionbreak{\clearpage}
+	\renewcommand{\thesection}{Appendix \@Alph\c@section}
 	\appendixheaders
 	\clearpage\phantomsection
 	\addcontentsline{toc}{section}{APPENDICES}
@@ -229,10 +224,10 @@
 
 \def\unnumchapter{\@ifstar\@unnumchapter\@@unnumchapter}
 \def\@unnumchapter#1{
-	\chapter*{#1}
+	\sectionbreak\chapter*{#1}
 }
 \def\@@unnumchapter#1{
-	\clearpage\phantomsection
+	\sectionbreak\phantomsection
 	\chapter*{#1}
 	\addcontentsline{toc}{section}{#1}
 }
@@ -242,7 +237,6 @@
 	\MakeTextUppercase{#1}\\#2\\
 }
 \newcommand{\makeapprovalsheet}[1]{
-	\clearpage
 	\unnumchapter*{APPROVAL SHEET}
 	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
@@ -258,14 +252,12 @@
 }
 
 \newcommand{\makeacknowledgement}[1]{
-	\clearpage
 	\unnumchapter*{ACKNOWLEDGEMENT}
 
 	#1
 }
 
 \newcommand{\makeabstract}[1]{
-	\clearpage
 	\unnumchapter{ABSTRACT}
 	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title"
 	\vspace*{2\baselineskip}\\
