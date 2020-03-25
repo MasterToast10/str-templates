@@ -205,27 +205,27 @@
 	\titlespacing{\section}{0pt}{12pt}{0pt}
 }
 
+\let\oldtitlepage\titlepage
+\let\oldendtitlepage\endtitlepage
+\def\titlepage{
+	\oldtitlepage\center\the\tptitle\\
+}
+\def\endtitlepage{
+	\vfill\@date\endcenter\oldendtitlepage
+}
 \renewcommand{\maketitle}{
 	\begin{titlepage}
-		\begin{center}
-			\the\tptitle\\
+		\vspace*{12\baselineskip}
 			
-			\vspace*{12\baselineskip}
+		A research paper submitted to the\\
+		Faculty of the Philippine Science High School--\\
+		Cordillera Administrative Region Campus\\
+		in fulfillment of the course requirements in\\
+		Science, Technology, Engineering and Mathematics Research\\
 			
-			A research paper submitted to the\\
-			Faculty of the Philippine Science High School--\\
-			Cordillera Administrative Region Campus\\
-			in fulfillment of the course requirements in\\
-			Science, Technology, Engineering and Mathematics Research\\
+		\vspace*{10\baselineskip}
 			
-			\vspace*{10\baselineskip}
-			
-			\tpauthors
-			
-			\vfill
-			
-			\@date
-		\end{center}
+		\tpauthors
 	\end{titlepage}
 }
 
