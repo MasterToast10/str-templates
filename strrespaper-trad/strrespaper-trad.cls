@@ -149,6 +149,7 @@
 	\appendixheaders
 	\clearpage\phantomsection
 	\addcontentsline{toc}{section}{APPENDICES}
+	\def\toclevel@section{2}
 	\addtocontents{toc}{\begingroup\string\makeatletter\global\let\string\l@section\string\l@subsection\endgroup}
 	\addtocontents{toc}{\protect\setlength{\cftsubsecnumwidth}{5.5em}}
 	\addtocontents{toc}{\protect\def\protect\cftsubsecaftersnum{:}}
