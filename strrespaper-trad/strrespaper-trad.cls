@@ -206,8 +206,7 @@
 \let\oldtitlepage\titlepage
 \let\oldendtitlepage\endtitlepage
 \def\titlepage{
-	\pdfbookmark[0]{\@title}{title}
-	\oldtitlepage\center\the\tptitle\\
+	\oldtitlepage\pdfbookmark[1]{TITLE PAGE}{title}\center\the\tptitle\\
 }
 \def\endtitlepage{
 	\tpauthors\vfill\@date\endcenter\oldendtitlepage
