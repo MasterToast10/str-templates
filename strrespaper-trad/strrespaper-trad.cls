@@ -211,7 +211,7 @@
 	\oldtitlepage\center\the\tptitle\\
 }
 \def\endtitlepage{
-	\vfill\@date\endcenter\oldendtitlepage
+	\tpauthors\vfill\@date\endcenter\oldendtitlepage
 }
 \renewcommand{\maketitle}{
 	\begin{titlepage}
@@ -224,8 +224,6 @@
 		Science, Technology, Engineering and Mathematics Research\\
 			
 		\vspace*{10\baselineskip}
-			
-		\tpauthors
 	\end{titlepage}
 }
 
