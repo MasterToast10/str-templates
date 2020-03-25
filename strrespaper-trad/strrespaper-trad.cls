@@ -53,6 +53,8 @@
 	urlcolor=black
 }
 
+\RequirePackage{bookmark}
+
 \RequirePackage[font=normalsize]{caption}
 
 \captionsetup{
@@ -204,6 +206,7 @@
 \let\oldtitlepage\titlepage
 \let\oldendtitlepage\endtitlepage
 \def\titlepage{
+	\pdfbookmark[0]{\@title}{title}
 	\oldtitlepage\center\the\tptitle\\
 }
 \def\endtitlepage{
@@ -225,10 +228,13 @@
 
 \def\unnumchapter{\@ifstar\@unnumchapter\@@unnumchapter}
 \def\@unnumchapter#1{
-	\sectionbreak\chapter*{#1}
+	\sectionbreak
+	\pdfbookmark[1]{#1}{#1}
+	\chapter*{#1}
 }
 \def\@@unnumchapter#1{
-	\sectionbreak\phantomsection
+	\sectionbreak
+	\phantomsection
 	\chapter*{#1}
 	\addcontentsline{toc}{section}{#1}
 }
