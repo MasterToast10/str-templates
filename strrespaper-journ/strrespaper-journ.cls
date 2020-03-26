@@ -106,7 +106,7 @@
 
 \newcommand{\affiliation}{Philippine Science High School – Main Campus, Department of Science and Technology, Agham Road, Diliman, Quezon City, 1101, Philippines}
 \newcommand{\email}{author@pshs.edu.ph}
-\renewcommand{\abstract}{Abstract should BE written in \underline{one paragraph not to exceed 300 words}. It should summarize the background and scope of the work, the principal results, and note the implications of these results or main conclusions. it should concisely capture the basic content of the paper and be understandable without the text. References and acronyms should be avoided.}
+\renewcommand{\abstract}{Abstract should BE written in \ctuline{one paragraph not to exceed 300 words}. It should summarize the background and scope of the work, the principal results, and note the implications of these results or main conclusions. it should concisely capture the basic content of the paper and be understandable without the text. References and acronyms should be avoided.}
 \newcommand{\keywords}{list up to six key words that reflect the content of the paper arranged alphabetically and separated by semicolon.}
 
 \newtoks\affiliation
@@ -121,7 +121,7 @@
         \textbf{\Large\@title}\\[1.5\baselineskip]
         \printauthors\\[0.5\baselineskip]
         \the\affiliation\\[0.5\baselineskip]
-        Corresponding Author Email: \href{mailto:\the\email}{\textcolor{blue}{\underline{\the\email}}}\\[1.5\baselineskip]
+        Corresponding Author Email: \href{mailto:\the\email}{\textcolor{blue}{\ctuline{\the\email}}}\\[1.5\baselineskip]
         \begin{adjustwidth}{0.55in}{0.55in}
             \section{Abstract}\vspace{0.5\baselineskip}
             \the\abstract\\
