@@ -41,6 +41,8 @@
 \RequirePackage{textcase}
 \RequirePackage{titlesec, tocloft}
 
+\RequirePackage{letltxmacro}
+
 \RequirePackage[normalem]{ulem}
 
 \renewcommand\ULdepth{1.6pt}
@@ -303,7 +305,6 @@
 }
 
 % Hyphenation within TypeWriter Fonts
-\RequirePackage{letltxmacro}
 \LetLtxMacro\origttfamily\ttfamily
 \DeclareRobustCommand*{\ttfamily}{%
 	\origttfamily
