@@ -40,6 +40,8 @@
 \RequirePackage{setspace}
 \RequirePackage{textcase}
 \RequirePackage{titlesec, tocloft}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{csquotes}
 
 \RequirePackage{letltxmacro}
 
@@ -265,7 +267,7 @@
 }
 \newcommand{\makeapprovalsheet}[1]{
 	\unnumchapter*{APPROVAL SHEET}
-	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\MakeTextUppercase{\@title}" is submitted by\printauthors{} on \the\dayofmonth~\@date
+	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, \enquote{\MakeTextUppercase{\@title}} is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
 	\begin{center}
 		\signatureline{\the\adviser}{Research Adviser}
@@ -287,7 +289,7 @@
 \newcommand{\keywords}[1]{\\[\baselineskip]\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School -- Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	{\bfseries\printauthors}. Philippine Science High School -- Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. \enquote{\MakeTextUppercase{\@title}} \\[2\baselineskip]
 	Adviser: {\bf \the\adviser}	\\
 	#1
 }
