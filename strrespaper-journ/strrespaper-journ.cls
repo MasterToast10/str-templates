@@ -36,6 +36,7 @@
 \RequirePackage{microtype}
 \RequirePackage[letterpaper, margin=1in, left=1.75cm, right=1.75cm]{geometry}
 \RequirePackage{xcolor}
+\RequirePackage{setspace}
 \RequirePackage{ragged2e}
 \RequirePackage{changepage}
 \RequirePackage{titlesec}
@@ -122,11 +123,9 @@
         \the\affiliation\\\vspace{0.5\baselineskip}
         Corresponding Author Email: \href{mailto:\the\email}{\textcolor{blue}{\underline{\the\email}}}\\\vspace{2\baselineskip}
         \begin{adjustwidth}{0.55in}{0.55in}
-            \section{Abstract}
-            \vspace{0.35em}
-            \the\abstract
+            \the\abstract\\
+            \hspace*{2em}\textit{Keywords:} \doublespacing\the\keywords\\[\baselineskip]
         \end{adjustwidth}
-        \textit{Keywords:} \the\keywords\vspace{2.5\baselineskip}
     }]
 }
 
