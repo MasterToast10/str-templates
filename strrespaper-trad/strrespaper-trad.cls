@@ -286,7 +286,7 @@
 	#1
 }
 
-\newcommand{\keywords}[1]{\par\doublespacing\textit{Keywords}: #1}
+\newcommand{\keywords}[1]{\par\indent\doublespacing\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
 	{\bfseries\printauthors}. Philippine Science High School -- Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. \enquote{\MakeTextUppercase{\@title}} \\[2\baselineskip]
