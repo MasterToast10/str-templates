@@ -118,11 +118,12 @@
     \initheaders
     \twocolumn[{
         \centering
-        \textbf{\Large\@title}\\\vspace{2\baselineskip}
-        \printauthors\\\vspace{0.5\baselineskip}
-        \the\affiliation\\\vspace{0.5\baselineskip}
-        Corresponding Author Email: \href{mailto:\the\email}{\textcolor{blue}{\underline{\the\email}}}\\\vspace{2\baselineskip}
+        \textbf{\Large\@title}\\[1.5\baselineskip]
+        \printauthors\\[0.5\baselineskip]
+        \the\affiliation\\[0.5\baselineskip]
+        Corresponding Author Email: \href{mailto:\the\email}{\textcolor{blue}{\underline{\the\email}}}\\[1.5\baselineskip]
         \begin{adjustwidth}{0.55in}{0.55in}
+            \section{Abstract}\vspace{0.5\baselineskip}
             \the\abstract\\
             \hspace*{2em}\textit{Keywords:} \doublespacing\the\keywords\\[\baselineskip]
         \end{adjustwidth}
