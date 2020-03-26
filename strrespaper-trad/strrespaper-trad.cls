@@ -235,7 +235,7 @@
 		\vspace*{12\baselineskip}
 			
 		A research paper submitted to the\\
-		Faculty of the Philippine Science High School--\\
+		Faculty of the Philippine Science High School --\\
 		Cordillera Administrative Region Campus\\
 		in fulfillment of the course requirements in\\
 		Science, Technology, Engineering and Mathematics Research\\
@@ -285,7 +285,7 @@
 \newcommand{\keywords}[1]{\\[\baselineskip]\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	{\bfseries\printauthors}. Philippine Science High School -- Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
 	Adviser: {\bf \the\adviser}	\\
 	#1
 }
