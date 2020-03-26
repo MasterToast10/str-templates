@@ -35,11 +35,12 @@
 \RequirePackage{newtxtext,newtxmath}
 \RequirePackage{microtype}
 \RequirePackage[letterpaper, margin=1in, left=1.5in]{geometry}
-\RequirePackage{fancyhdr}
+\RequirePackage{xcolor}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
 \RequirePackage{textcase}
 \RequirePackage{titlesec, tocloft}
+
 \RequirePackage[normalem]{ulem}
 
 \RequirePackage{hyperref}
@@ -88,6 +89,8 @@
 \newtoks\tptitle \newtoks\dayofmonth
 \newtoks\adviser
 \newtoks\level
+
+\RequirePackage{fancyhdr}
 
 \pagestyle{fancy}
 \fancyhf{}
