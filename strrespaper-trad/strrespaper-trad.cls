@@ -43,6 +43,22 @@
 
 \RequirePackage[normalem]{ulem}
 
+\renewcommand\ULdepth{1.6pt}
+\renewcommand\ULthickness{0.5pt}
+\RequirePackage{pgffor}
+\newcommand\ctuline[1]{%
+  \begingroup%
+  \uline{\phantom{\smash{#1}}}%
+  \foreach \hshift in {0.0, 0.1, ..., 0.4}{%
+    \foreach \upshift in {-0.4, -0.3, ..., 1.0}{%
+      \llap{\color{white}\raisebox{\upshift0pt}[0pt]{#1}\hspace{\hshift0pt}}%
+      \llap{\color{white}\raisebox{\upshift0pt}[0pt]{#1}\hspace{-\hshift0pt}}%
+    }%
+  }%
+  \llap{#1}%
+  \endgroup%
+}
+
 \RequirePackage{hyperref}
 
 \hypersetup{
@@ -269,7 +285,7 @@
 \newcommand{\keywords}[1]{\\[\baselineskip]\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \uline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
 	Adviser: {\bf \the\adviser}	\\
 	#1
 }
