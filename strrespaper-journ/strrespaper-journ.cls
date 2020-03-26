@@ -10,8 +10,8 @@
 % As copyright holder, I make no restriction on the output produced with
 % the templates and only wish to apply the license to the modified versions
 % of the TeX template files. You are free to modify the sample files and
-% publish the generated output (e.g. PDF files) without providing a copy of the source, 
-% however, should you publish a modified version of the source files, you must abide 
+% publish the generated output (e.g. PDF files) without providing a copy of the source,
+% however, should you publish a modified version of the source files, you must abide
 % by the terms of the GNU General Public License as published by the Free Software Foundation,
 % either version 3 of the License, or (at your option) any later version.
 
@@ -46,16 +46,16 @@
 \renewcommand\ULthickness{0.5pt}
 \RequirePackage{pgffor}
 \newcommand\ctuline[1]{%
-  \begingroup%
-  \uline{\phantom{\smash{#1}}}%
-  \foreach \hshift in {0.0, 0.1, ..., 0.4}{%
-    \foreach \upshift in {-0.4, -0.3, ..., 1.0}{%
-      \llap{\color{white}\raisebox{\upshift0pt}[0pt]{#1}\hspace{\hshift0pt}}%
-      \llap{\color{white}\raisebox{\upshift0pt}[0pt]{#1}\hspace{-\hshift0pt}}%
-    }%
-  }%
-  \llap{#1}%
-  \endgroup%
+	\begingroup%
+	\uline{\phantom{\smash{#1}}}%
+	\foreach \hshift in {0.0, 0.1, ..., 0.4}{%
+		\foreach \upshift in {-0.4, -0.3, ..., 1.0}{%
+			\llap{\color{white}\raisebox{\upshift0pt}[0pt]{#1}\hspace{\hshift0pt}}%
+			\llap{\color{white}\raisebox{\upshift0pt}[0pt]{#1}\hspace{-\hshift0pt}}%
+		}%
+	}%
+	\llap{#1}%
+	\endgroup%
 }
 
 \RequirePackage{hyperref}
@@ -64,30 +64,30 @@
 	colorlinks=true,
 	linktoc=all,
 	citecolor=black,
-	filecolor=black,	
+	filecolor=black,
 	linkcolor=black,
 	urlcolor=black
 }
 
 \expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
-  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
-  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
-  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
-  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
-  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
-  \do\Y\do\Z}
+	\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+	\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+	\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+	\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+	\do\Y\do\Z}
 
 \RequirePackage[font=normalsize]{caption}
 
 \captionsetup[table]{
-    singlelinecheck=false,
-    textfont=it,
-    labelsep=newline
+	singlelinecheck=false,
+	textfont=it,
+	labelsep=newline
 }
 \captionsetup[figure]{
 	textformat=period,
-    labelfont=it,
-    labelsep=period
+	labelfont=it,
+	labelsep=period
 }
 
 \RequirePackage{fancyhdr}
@@ -97,7 +97,7 @@
 \rfoot{\fontsize{12}{\baselineskip}\selectfont\thepage\fontsize{10}{\baselineskip}\selectfont}
 
 \newcommand{\runningHead}[1]{
-    \lhead{\MakeUppercase{#1}}
+	\lhead{\MakeUppercase{#1}}
 }
 
 \setlength{\parskip}{0.5\baselineskip}
@@ -115,29 +115,29 @@
 \newtoks\keywords
 
 \renewcommand{\maketitle}{
-    \initheaders
-    \twocolumn[{
-        \centering
-        \textbf{\Large\@title}\\[1.5\baselineskip]
-        \printauthors\\[0.5\baselineskip]
-        \the\affiliation\\[0.5\baselineskip]
-        Corresponding Author Email: \href{mailto:\the\email}{\textcolor{blue}{\ctuline{\the\email}}}\\[1.5\baselineskip]
-        \begin{adjustwidth}{0.55in}{0.55in}
-            \section{Abstract}\vspace{0.5\baselineskip}
-            \the\abstract\\
-            \hspace*{2em}\textit{Keywords:} \doublespacing\the\keywords\\[\baselineskip]
-        \end{adjustwidth}
-    }]
+	\initheaders
+	\twocolumn[{
+		\centering
+		\textbf{\Large\@title}\\[1.5\baselineskip]
+		\printauthors\\[0.5\baselineskip]
+		\the\affiliation\\[0.5\baselineskip]
+		Corresponding Author Email: \href{mailto:\the\email}{\textcolor{blue}{\ctuline{\the\email}}}\\[1.5\baselineskip]
+		\begin{adjustwidth}{0.55in}{0.55in}
+			\section{Abstract}\vspace{0.5\baselineskip}
+			\the\abstract\\
+			\hspace*{2em}\textit{Keywords:} \doublespacing\the\keywords\\[\baselineskip]
+		\end{adjustwidth}
+	}]
 }
 
 \newcommand{\initheaders}{
-    \titleformat{\section}[block]{\bfseries\centering}{}{0pt}{}
-    \titlespacing{\section}{0pt}{0pt}{0pt}
-    
-    \titleformat{\subsection}[block]{\bfseries}{}{0pt}{}
-    \titlespacing{\subsection}{0pt}{0pt}{0pt}
-    
-    \titleformat{\subsubsection}{\bfseries\itshape}{}{0pt}{}
+	\titleformat{\section}[block]{\bfseries\centering}{}{0pt}{}
+	\titlespacing{\section}{0pt}{0pt}{0pt}
+
+	\titleformat{\subsection}[block]{\bfseries}{}{0pt}{}
+	\titlespacing{\subsection}{0pt}{0pt}{0pt}
+
+	\titleformat{\subsubsection}{\bfseries\itshape}{}{0pt}{}
 	\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
 
 	\titleformat{\paragraph}[runin]{\bfseries}{}{0pt}{}[.]
@@ -151,17 +151,17 @@
 \RequirePackage{letltxmacro}
 \LetLtxMacro\origttfamily\ttfamily
 \DeclareRobustCommand*{\ttfamily}{%
-  \origttfamily
-  \hyphenchar\font=`\-\relax
-  \fontdimen3\font=.25em\relax
-  \fontdimen4\font=.167em\relax
-  \fontdimen7\font=.167em\relax
+	\origttfamily
+	\hyphenchar\font=`\-\relax
+	\fontdimen3\font=.25em\relax
+	\fontdimen4\font=.167em\relax
+	\fontdimen7\font=.167em\relax
 }
 
 \DeclareRobustCommand\vttfamily{%
-  \not@math@alphabet\vttfamily\relax
-  \fontfamily{cmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
-  \selectfont
+	\not@math@alphabet\vttfamily\relax
+	\fontfamily{cmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
+	\selectfont
 }
 \DeclareTextFontCommand{\textvtt}{\vttfamily}
 
@@ -179,14 +179,14 @@
 	\setcounter{dummycounter}{0}%
 	\def\@elt##1{%
 	\ifnum\c@dummycounter < \numexpr\c@author@counter - 3\relax%
-    , 
-    \else
-    {\ifnum\c@dummycounter < \numexpr\c@author@counter - 2\relax%
-    ,\\
-    \else
-    { and}%
-    \fi}
-    \fi
+	,
+	\else
+	{\ifnum\c@dummycounter < \numexpr\c@author@counter - 2\relax%
+	,\\
+	\else
+	{ and}%
+	\fi}
+	\fi
 	\stepcounter{dummycounter}%
 	}
 	\the\author@toks%
