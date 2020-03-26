@@ -225,7 +225,7 @@
 \let\oldtitlepage\titlepage
 \let\oldendtitlepage\endtitlepage
 \def\titlepage{
-	\oldtitlepage\pdfbookmark[1]{TITLE PAGE}{title}\center\the\tptitle\\
+	\oldtitlepage\pdfbookmark[1]{TITLE PAGE}{title}\center\MakeTextUppercase{\the\tptitle}\\
 }
 \def\endtitlepage{
 	\tpauthors\vfill\@date\endcenter\oldendtitlepage
@@ -263,7 +263,7 @@
 }
 \newcommand{\makeapprovalsheet}[1]{
 	\unnumchapter*{APPROVAL SHEET}
-	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\@title" is submitted by\printauthors{} on \the\dayofmonth~\@date
+	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, "\MakeTextUppercase{\@title}" is submitted by\printauthors{} on \the\dayofmonth~\@date
 	
 	\begin{center}
 		\signatureline{\the\adviser}{Research Adviser}
@@ -285,7 +285,7 @@
 \newcommand{\keywords}[1]{\\[\baselineskip]\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. "\MakeTextUppercase{\@title}" \\[2\baselineskip]
 	Adviser: {\bf \the\adviser}	\\
 	#1
 }

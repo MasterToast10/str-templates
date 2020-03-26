@@ -53,13 +53,13 @@
 \addbibresource{../sample-resources/bibliographies/str.bib} % TODO: Add your BibLaTeX files here
 
  
-\title{RESEARCH PROJECT TITLE} % TODO: Put your proper title here
+\title{Research Project Title} % TODO: Put your proper title here
 \dayofmonth{13} % TODO: Day of month (Depends on prof)
 \date{May 2020} % TODO: Date (MMMM-YYYY; Also depends on prof)
 
 \tptitle{
-	(UPPERCASE except for \textit{Scientific names}) \\
-	RESEARCH PROJECT TITLE
+	\NoCaseChange{(UPPERCASE except for \textit{Scientific names})} \\
+	Research Project Title
 } % TODO: Format your title to make it an inverted pyramid
 
 % TODO: Names in alphabetical order (First M.I. Family Name)
@@ -90,7 +90,7 @@
 \makeatletter
 \renewcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. "\@title" \\[2\baselineskip]
+	{\bfseries\printauthors}. Philippine Science High School--Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. "\MakeTextUppercase{\@title}" \\[2\baselineskip]
 	Adviser: {\bf \the\adviser}	\\
 	% Uncomment this to add indent to text
 	% \indent
