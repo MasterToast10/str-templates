@@ -62,6 +62,7 @@
 \RequirePackage[font=normalsize]{caption}
 
 \captionsetup[table]{
+    singlelinecheck=false,
     textfont=it,
     labelsep=newline
 }
