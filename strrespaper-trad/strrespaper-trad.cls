@@ -272,8 +272,10 @@
 }
 
 \newcommand{\termdef}[2]{
+	\def\extradef{\\\hphantom{\textbf{#1}}\hspace{-2\wordsep}--\hspace{3\wordsep}}
 	\par \hangindent=1em \hangafter=1 \noindent  
 	\textbf{#1}\hspace{2\wordsep}--\hspace{2\wordsep}#2
+	\let\extradef\relax
 }
 
 \newcommand{\literaturecited}{
