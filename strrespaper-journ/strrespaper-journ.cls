@@ -41,6 +41,9 @@
 \RequirePackage{changepage}
 \RequirePackage{titlesec}
 
+\RequirePackage{tabularx}
+\renewcommand\tabularxcolumn[1]{>{\Centering}p{#1}}
+
 \RequirePackage[normalem]{ulem}
 \renewcommand\ULdepth{1.6pt}
 \renewcommand\ULthickness{0.5pt}
