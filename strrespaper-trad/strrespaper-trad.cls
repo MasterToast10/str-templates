@@ -215,10 +215,10 @@
 	\titlespacing{\subsubsection}{0.5em}{0pt}{0pt}
 
 	\titleformat{\paragraph}[runin]{\bfseries}{}{0pt}{}[.]
-	\titlespacing{\paragraph}{2em}{0pt}{\wordsep}
+	\titlespacing{\paragraph}{\parindent}{0pt}{\wordsep}
 
 	\titleformat{\subparagraph}[runin]{\bfseries\itshape}{}{0pt}{}[.]
-	\titlespacing{\subparagraph}{2em}{0pt}{\wordsep}
+	\titlespacing{\subparagraph}{\parindent}{0pt}{\wordsep}
 }
 
 \newcommand{\appendixheaders}{
