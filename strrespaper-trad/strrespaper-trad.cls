@@ -43,6 +43,25 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{csquotes}
 
+\RequirePackage{glossaries}
+\glsdisablehyper
+
+\RequirePackage{xspace}
+\xspaceaddexceptions{\csq@qclose@i}
+
+\RequirePackage{xparse}
+\DeclareDocumentCommand{\newscientificname}{o m m m}{
+	\IfNoValueTF{#1}{
+		\newacronym[first=\emph{#4}]{#2}{\emph{#3}}{\emph{#4}}
+	}{
+		\newacronym[#1]{#2}{\emph{#3}}{\emph{#4}}
+	}
+	
+	\expandafter\newcommand\csname #2\endcsname{\protect\NoCaseChange{\gls{\NoCaseChange{#2}}}\xspace}
+	\expandafter\newcommand\csname #2short\endcsname{\protect\NoCaseChange{\acrshort{\NoCaseChange{#2}}}\xspace}
+	\expandafter\newcommand\csname #2long\endcsname{\protect\NoCaseChange{\acrlong{\NoCaseChange{#2}}}\xspace}
+}
+
 \RequirePackage{letltxmacro}
 
 \RequirePackage[normalem]{ulem}

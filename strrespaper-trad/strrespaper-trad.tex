@@ -39,10 +39,11 @@
 % For code listings (type "texdoc listings" [without the quotes] for more information)
 \usepackage{listings}
 
-% For species names (type "texdoc biocon" [without the quotes] for more information)
-\usepackage{biocon}
-\newplant{At}{genus=Arabidopsis, epithet=thaliana, author=Heynh., oldauthor=L.}
-\newbact{ecoli}{genus=Escherichia, epithet=coli}
+% For scientific names/acronyms (type "texdoc glossaries" [without the quotes] for more information)
+\newscientificname{At}{A. thaliana}{Arabidopsis thaliana}
+\newscientificname{ecoli}{E. coli}{Escherichia coli}
+\newscientificname{sname}{S. name}{Scientific name}
+\newacronym{sus}{SUS}{System Usability Scale}
 
 % TODO: Feel free to remove once your remove all the dummy text
 \usepackage{blindtext} 
@@ -53,13 +54,13 @@
 \addbibresource{../sample-resources/bibliographies/str.bib} % TODO: Add your BibLaTeX files here
 
  
-\title{Research Project Title} % TODO: Put your proper title here
+\title{Research Project Title Concerning the Effects of \snamelong} % TODO: Put your proper title here
 \dayofmonth{13} % TODO: Day of month (Depends on prof)
 \date{May 2020} % TODO: Date (MMMM-YYYY; Also depends on prof)
 
 \tptitle{
-	\NoCaseChange{(UPPERCASE except for \textit{Scientific names})} \\
-	Research Project Title
+	Research Project Title Concerning \\ 
+	the Effects of \snamelong 
 } % TODO: Format your title to make it an inverted pyramid
 
 % TODO: Names in alphabetical order (First M.I. Family Name)
@@ -156,13 +157,20 @@
 
 			In the article \citetitle{sachdevHowWriteBackground2018} by \citeauthor{sachdevHowWriteBackground2018}, the ideal background is structured as follows: the current knowledge on the broad topic, the gaps in knowledge that needs to be addressed, the significance of addressing said gaps, and then the rationale of the study.
 
-			This paragraph is a demonstration of the features of the package \texttt{biocon}. For example, \plant{At}.
-			\plant[e]{At} is a plant (extended representation).
-			\plant{At} is composed of plant stuff.
-			Another example is \bact{ecoli}.
-			\bact{ecoli} is a form of bacteria.
-			\bact{ecoli} is made of bacteria stuff.
-			This is \bact[f]{ecoli} in full.
+			This paragraph is a demonstration of the features of the package \texttt{glossaries}.
+			Our specific example is the \acrshort{sus}.
+			The \gls{sus} is used in a variety of applications.
+			The \gls{sus} is a Likert scale.
+			The \acrlong{sus} is used in evaluating the usability of a system.
+
+			This paragraph is a demonstration of the features of the scientific name support. 
+			For example, \At.
+			\At is a plant.
+			\At is composed of plant stuff.
+			Another example is \ecoli.
+			\ecoli is a form of bacteria.
+			\ecolishort is made of bacteria stuff.
+			This is \ecolilong in full.
 
 			\Blindtext[2]
 

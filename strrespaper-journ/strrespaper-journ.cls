@@ -37,9 +37,29 @@
 \RequirePackage[letterpaper, margin=1in, left=1.75cm, right=1.75cm]{geometry}
 \RequirePackage{xcolor}
 \RequirePackage{setspace}
+\RequirePackage{textcase}
 \RequirePackage{ragged2e}
 \RequirePackage{changepage}
 \RequirePackage{titlesec}
+
+\RequirePackage{glossaries}
+\glsdisablehyper
+
+\RequirePackage{xspace}
+\xspaceaddexceptions{\csq@qclose@i}
+
+\RequirePackage{xparse}
+\DeclareDocumentCommand{\newscientificname}{o m m m}{
+	\IfNoValueTF{#1}{
+		\newacronym[first=\emph{#4}]{#2}{\emph{#3}}{\emph{#4}}
+	}{
+		\newacronym[#1]{#2}{\emph{#3}}{\emph{#4}}
+	}
+	
+	\expandafter\newcommand\csname #2\endcsname{\protect\NoCaseChange{\gls{\NoCaseChange{#2}}}\xspace}
+	\expandafter\newcommand\csname #2short\endcsname{\protect\NoCaseChange{\acrshort{\NoCaseChange{#2}}}\xspace}
+	\expandafter\newcommand\csname #2long\endcsname{\protect\NoCaseChange{\acrlong{\NoCaseChange{#2}}}\xspace}
+}
 
 \RequirePackage{tabularx}
 \renewcommand\tabularxcolumn[1]{>{\Centering}p{#1}}
@@ -100,7 +120,7 @@
 \rfoot{\fontsize{12}{\baselineskip}\selectfont\thepage\fontsize{10}{\baselineskip}\selectfont}
 
 \newcommand{\runningHead}[1]{
-	\lhead{\MakeUppercase{#1}}
+	\lhead{\MakeTextUppercase{#1}}
 }
 
 \setlength{\parskip}{0.5\baselineskip}
