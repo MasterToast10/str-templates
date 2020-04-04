@@ -38,7 +38,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{multicol}
 \RequirePackage{setspace}
-\RequirePackage{textcase}
+\RequirePackage[overload]{textcase}
 \RequirePackage{titlesec, tocloft}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{csquotes}

@@ -37,7 +37,7 @@
 \RequirePackage[letterpaper, margin=1in, left=1.75cm, right=1.75cm]{geometry}
 \RequirePackage{xcolor}
 \RequirePackage{setspace}
-\RequirePackage{textcase}
+\RequirePackage[overload]{textcase}
 \RequirePackage{ragged2e}
 \RequirePackage{changepage}
 \RequirePackage{titlesec}
