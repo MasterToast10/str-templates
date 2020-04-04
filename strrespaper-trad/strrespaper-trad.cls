@@ -53,16 +53,24 @@
 \xspaceaddexceptions{\csq@qclose@i}
 
 \RequirePackage{xparse}
-\DeclareDocumentCommand{\newscientificname}{o m m m}{
+\DeclareDocumentCommand{\newscientificname}{o o m m m}{
 	\IfNoValueTF{#1}{
-		\newacronym[first=\emph{#4}]{#2}{\emph{#3}}{\emph{#4}}
+		\newacronym[first=\emph{#5}]{#3}{\NoCaseChange{\emph{#4}}}{\NoCaseChange{\emph{#5}}}
 	}{
-		\newacronym[#1]{#2}{\emph{#3}}{\emph{#4}}
+		\IfNoValueTF{#2}{
+			\newacronym[first=#1 (\emph{#5})]{#3}{\NoCaseChange{\emph{#4}}}{\NoCaseChange{\emph{#5}}}
+		}{
+			\newacronym[first=#1 (\emph{#5}), #2]{#3}{\NoCaseChange{\emph{#4}}}{\NoCaseChange{\emph{#5}}}
+		}
+		\expandafter\newcommand\csname #3common\endcsname{#1\xspace}
+		\expandafter\newcommand\csname #3Common\endcsname{\MakeTextUppercase#1\xspace}
+		\expandafter\newcommand\csname #3first\endcsname{#1 (\NoCaseChange{\emph{#5}})\xspace}
+		\expandafter\newcommand\csname #3First\endcsname{\MakeTextUppercase#1 (\NoCaseChange{\emph{#5}})\xspace}
 	}
 	
-	\expandafter\newcommand\csname #2\endcsname{\protect\NoCaseChange{\gls{\NoCaseChange{#2}}}\xspace}
-	\expandafter\newcommand\csname #2short\endcsname{\protect\NoCaseChange{\acrshort{\NoCaseChange{#2}}}\xspace}
-	\expandafter\newcommand\csname #2long\endcsname{\protect\NoCaseChange{\acrlong{\NoCaseChange{#2}}}\xspace}
+	\expandafter\newcommand\csname #3\endcsname{\protect\NoCaseChange{\gls{\NoCaseChange{#3}}}\xspace}
+	\expandafter\newcommand\csname #3short\endcsname{\protect\NoCaseChange{\emph{#4}}\xspace}
+	\expandafter\newcommand\csname #3long\endcsname{\protect\NoCaseChange{\emph{#5}}\xspace}
 }
 
 \RequirePackage{letltxmacro}

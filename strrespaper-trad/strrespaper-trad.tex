@@ -40,7 +40,7 @@
 \usepackage{listings}
 
 % For scientific names/acronyms (type "texdoc glossaries" [without the quotes] for more information)
-\newscientificname{At}{A. thaliana}{Arabidopsis thaliana}
+\newscientificname[thale cress]{At}{A. thaliana}{Arabidopsis thaliana}
 \newscientificname{ecoli}{E. coli}{Escherichia coli}
 \newscientificname{sname}{S. name}{Scientific name}
 \newacronym{sus}{SUS}{System Usability Scale}
@@ -164,14 +164,16 @@
 			The \acl{sus} is used in evaluating the usability of a system.
 			\Acf{sus} is the full form of the \ac{sus}.
 
-			This paragraph is a demonstration of the features of the scientific name support. 
-			For example, \At.
-			\At is a plant.
-			\At is composed of plant stuff.
+			This paragraph is a demonstration of the features of the scientific name support via \texttt{glossaries}. 
+			Note that sentences beginning with scientific names should have the scientific names in full.
+			For example, the \At.
+			Plant material composes \At.
+			\Atlong is a plant.
+			\AtCommon is the common name of \At.
+			This is the full version of \Atfirst.
 			Another example is \ecoli.
-			\ecoli is a form of bacteria.
-			\ecolishort is made of bacteria stuff.
-			This is \ecolilong in full.
+			\ecolilong is a form of bacteria.
+			This is \ecoli shortened.
 
 			\Blindtext[2]
 
