@@ -44,6 +44,9 @@
 \RequirePackage{csquotes}
 
 \RequirePackage{glossaries}
+\setupglossaries{
+	shortcuts
+}
 \glsdisablehyper
 
 \RequirePackage{xspace}
