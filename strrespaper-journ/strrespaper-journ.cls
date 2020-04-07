@@ -31,7 +31,7 @@
 
 % For any concerns regarding this software, please email me at vashpatrickancheta@gmail.com
 
-\LoadClass[10pt]{article}
+\LoadClass[10pt, letterpaper]{article}
 \RequirePackage{newtxtext,newtxmath}
 \RequirePackage{microtype}
 \RequirePackage[letterpaper, margin=1in, left=1.75cm, right=1.75cm]{geometry}
