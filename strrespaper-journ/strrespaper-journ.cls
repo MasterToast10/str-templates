@@ -83,7 +83,7 @@
 	\begingroup%
 	\uline{\phantom{\smash{#1}}}%
 	\foreach \hshift in {0.0, 0.1, ..., 0.4}{%
-		\foreach \upshift in {-0.4, -0.3, ..., 1.0}{%
+		\foreach \upshift in {-0.4, -0.3, ..., 2.0}{%
 			\llap{\color{white}\raisebox{\upshift0pt}[0pt]{#1}\hspace{\hshift0pt}}%
 			\llap{\color{white}\raisebox{\upshift0pt}[0pt]{#1}\hspace{-\hshift0pt}}%
 		}%
