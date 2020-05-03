@@ -227,7 +227,7 @@
 
 \newcommand{\frontheaders}{
 	\titleformat{\section}[block]{\bfseries\centering \singlespacing}{}{0pt}{\MakeTextUppercase}
-	\titlespacing*{\section}{0pt}{0pt}{0.5\baselineskip}
+	\titlespacing*{\section}{0pt}{0pt}{1.45\baselineskip}
 }
 
 \newcommand{\contentsheaders}{
@@ -292,22 +292,17 @@
 }
 
 \newcommand{\signatureline}[2]{
-	\vspace*{3\baselineskip}
-	\MakeTextUppercase{#1}\\#2\\
+	\vspace*{2\baselineskip plus \baselineskip}
+	\mbox{\MakeTextUppercase{#1}}\\#2\\
 }
 \newcommand{\makeapprovalsheet}[1]{
 	\unnumchapter*{APPROVAL SHEET}
-	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, \enquote{\MakeTextUppercase{\@title}} is submitted by\printauthors{} on \the\dayofmonth~\@date
+	\hspace*{\parindent}This research paper entitled, \enquote{\MakeTextUppercase{\@title}} submitted by\printauthors{} has been examined and recommended for approval.
+
+	{\centering\signatureline{\the\adviser}{Research Adviser}}
+	\vspace{3\baselineskip}
 	
-	\begin{center}
-		\signatureline{\the\adviser}{Research Adviser}
-		
-		\vspace*{4\baselineskip}
-		
-		This research paper is hereby accepted by the Research Council.
-		
-		#1
-	\end{center}
+	#1
 }
 
 \newcommand{\makeacknowledgement}[1]{
