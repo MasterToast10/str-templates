@@ -266,7 +266,7 @@
 }
 \renewcommand{\maketitle}{
 	\begin{titlepage}
-		\vspace*{12\baselineskip}
+		\vfill
 			
 		A research paper submitted to the\\
 		Faculty of the Philippine Science High School --\\
@@ -274,7 +274,7 @@
 		in fulfillment of the course requirements in\\
 		Science, Technology, Engineering and Mathematics Research\\
 			
-		\vspace*{10\baselineskip}
+		\vfill
 	\end{titlepage}
 }
 
