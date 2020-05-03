@@ -131,12 +131,12 @@
 \ProcessOptions\relax
 
 \newcommand{\tptitle}{RESEARCH TITLE}
-\newcommand{\dayofmonth}{13} % \date token is built-in
+% \date token is built-in
 \author{}
 \newcommand{\adviser}{Adviser C. Adviser}
 \newcommand{\level}{3}
 
-\newtoks\tptitle \newtoks\dayofmonth
+\newtoks\tptitle
 \newtoks\adviser
 \newtoks\level
 
@@ -272,7 +272,7 @@
 		Faculty of the Philippine Science High School --\\
 		Cordillera Administrative Region Campus\\
 		in fulfillment of the course requirements in\\
-		Science, Technology, Engineering and Mathematics Research\\
+		Science, Technology, Engineering and Mathematics Research \the\level\\
 			
 		\vfill
 	\end{titlepage}
@@ -314,7 +314,7 @@
 \newcommand{\keywords}[1]{\par\indent\doublespacing\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
 	\unnumchapter{ABSTRACT}
-	{\bfseries\printauthors}. Philippine Science High School -- Cordillera Administrative Region Campus, \ctuline{\the\dayofmonth \thickspace \@date}. \enquote{\MakeTextUppercase{\@title}} \\[2\baselineskip]
+	{\bfseries\printauthors}. Philippine Science High School -- Cordillera Administrative Region Campus, \ctuline{\@date}. \enquote{\MakeTextUppercase{\@title}} \\[2\baselineskip]
 	Adviser: {\bf \the\adviser}	\\
 	#1
 }
