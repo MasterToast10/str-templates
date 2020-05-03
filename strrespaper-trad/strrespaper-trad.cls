@@ -299,7 +299,9 @@
 	\unnumchapter*{APPROVAL SHEET}
 	\hspace*{\parindent}This research paper entitled, \enquote{\MakeTextUppercase{\@title}} submitted by\printauthors{} has been examined and recommended for approval.
 
-	{\centering\signatureline{\the\adviser}{Research Adviser}}
+	{\centering
+		\signatureline{\the\adviser} {Research Adviser}
+	}
 	\vspace{3\baselineskip}
 	
 	#1
