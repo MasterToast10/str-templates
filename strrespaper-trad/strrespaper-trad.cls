@@ -236,10 +236,10 @@
 
 \newcommand{\initheaders}{
 	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeTextUppercase}
-	\titlespacing{\section}{0pt}{0pt}{0.5\baselineskip}
+	\titlespacing{\section}{0pt}{0pt}{0.5\baselineskip minus 24pt}
 
 	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{0pt}{}
-	\titlespacing{\subsection}{0pt}{0.5\baselineskip}{0pt}
+	\titlespacing{\subsection}{0pt}{0.5\baselineskip minus 24pt}{0pt}
 	
 	\titleformat{\subsubsection}{\itshape \singlespacing}{}{0pt}{}
 	\titlespacing{\subsubsection}{0.5em}{0pt}{0pt}
@@ -333,6 +333,7 @@
 
 \newcommand{\literaturecited}{
 	\unnumchapter{LITERATURE CITED}
+	\vspace{6pt}
 	\printbibliography[heading=none]
 }
 
