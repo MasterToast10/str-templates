@@ -294,6 +294,19 @@
 	\vspace*{2\baselineskip plus \baselineskip}
 	\mbox{\MakeTextUppercase{#1}}\\#2\\
 }
+\newcommand{\makeapprovalsheet}[1]{
+	\hspace*{\parindent}In fulfillment of the requirements in Science, Technology, Engineering and Mathematics Research \the\level~(STR \the\level), this research entitled, \enquote{\MakeTextUppercase{\@title}} is submitted by\printauthors{} on \@date
+	
+	\begin{center}
+		\signatureline{\the\adviser}{Research Adviser}
+		
+		\vspace*{4\baselineskip}
+		
+		This research paper is hereby accepted by the Research Council.
+		
+		#1
+	\end{center}
+}
 
 \newcommand{\keywords}[1]{\par\indent\doublespacing\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{

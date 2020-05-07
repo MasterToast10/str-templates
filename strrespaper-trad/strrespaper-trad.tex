@@ -105,38 +105,25 @@
 	\frontmatter
 
 	\unnumchapter*{APPROVAL SHEET}
-		\hspace*{\parindent}This research paper entitled, \enquote{\MakeTextUppercase{\@title}} submitted by\printauthors{} has been examined and recommended for approval.
+		\makeapprovalsheet{
+			\signatureline{Conrado C. Rotor, \NoCaseChange{Jr., Ph.D.}}{Chair}
 
-			{\centering
-				\signatureline{\the\adviser} {Research Adviser}
-			}
-		\vspace{3\baselineskip}
+			\signatureline{Melba C. Patacsil}{Co-chair}
 
-		\noindent This research paper has been approved for submission in fulfillment of the requirements in Research \the\level.
+			\vspace*{\baselineskip}
 
-		{\centering
-		\signatureline{Jay Jay F. Manuel} {Research Teacher}
-		}
+			\begin{multicols}{2}
+				\begin{center}
+					\signatureline{Jay Jay F. Manuel}{Member}
+					\signatureline{Ricarido M. Saturay, \NoCaseChange{Jr.}}{Member}
 
-		\vspace{3\baselineskip}
-
-		\noindent This is to certify that the research paper has been accepted.
-
-			{\centering
-				\begin{multicols}{2}
-					\signatureline{Marites P. Rivera} {Panel Member}
 					\columnbreak
-					\signatureline{Freda M. Wong} {Panel Member}
-				\end{multicols}
 
-				\signatureline{Ricarido M. Saturay, \NoCaseChange{Jr.}} {Panel Member}
-
-				\vfill
-
-				\signatureline{Melba C. Patacsil} {CID Chief}
-
-				\signatureline{Conrado C. Rotor, \NoCaseChange{Jr., Ph.D.}} {Campus Director}
-			}
+					\signatureline{Marites P. Rivera}{Member}
+					\signatureline{Freda M. Wong}{Member}
+				\end{center}
+			\end{multicols}
+		}
 
 	\unnumchapter*{ACKNOWLEDGEMENT}
 		% TODO: Acknowledgement
