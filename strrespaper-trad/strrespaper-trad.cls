@@ -39,7 +39,8 @@
 \RequirePackage{multicol}
 \RequirePackage{setspace}
 \RequirePackage[overload]{textcase}
-\RequirePackage{titlesec, tocloft}
+\RequirePackage[compact]{titlesec}
+\RequirePackage{tocloft}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{csquotes}
 
@@ -194,7 +195,7 @@
 
 \newcommand{\frontmatter}{\pagenumbering{roman} \frontheaders \renamesectochap}
 
-\newcommand{\mainmatter}{\pagenumbering{arabic} \doublespace \initheaders}
+\newcommand{\mainmatter}{\pagenumbering{arabic} \doublespacing \initheaders}
 
 \renewcommand{\appendix}{
 	\setcounter{section}{0}%
@@ -226,7 +227,7 @@
 
 \newcommand{\frontheaders}{
 	\titleformat{\section}[block]{\bfseries\centering \singlespacing}{}{0pt}{\MakeTextUppercase}
-	\titlespacing*{\section}{0pt}{0pt}{1.45\baselineskip}
+	\titlespacing*{\section}{0pt}{0pt}{3ex}
 }
 
 \newcommand{\contentsheaders}{
@@ -235,10 +236,10 @@
 
 \newcommand{\initheaders}{
 	\titleformat{\section}[display]{\bfseries\centering \singlespacing}{\thesection}{0pt}{\MakeTextUppercase}
-	\titlespacing{\section}{0pt}{0pt}{0.5\baselineskip minus 24pt}
+	\titlespacing{\section}{0pt}{0pt}{3ex}
 
-	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{0pt}{}
-	\titlespacing{\subsection}{0pt}{0.5\baselineskip minus 24pt}{0pt}
+	\titleformat{\subsection}[display]{\bfseries \singlespacing}{}{-4ex}{}
+	\titlespacing{\subsection}{0pt}{3ex}{0pt}
 	
 	\titleformat{\subsubsection}{\itshape \singlespacing}{}{0pt}{}
 	\titlespacing{\subsubsection}{0.5em}{0pt}{0pt}
@@ -291,7 +292,7 @@
 }
 
 \newcommand{\signatureline}[2]{
-	\vspace*{2\baselineskip plus \baselineskip}
+	\vspace*{3\baselineskip minus \baselineskip}
 	\mbox{\MakeTextUppercase{#1}}\\#2\\
 }
 \newcommand{\makeapprovalsheet}[1]{
