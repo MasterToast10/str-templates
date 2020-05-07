@@ -168,8 +168,7 @@
 	\renewcommand{\cftafterloftitle}{\hfill\bf Page \hspace{\contentsadjust}}
 	\renewcommand{\cftafterlottitle}{\hfill\bf Page \hspace{\contentsadjust}}
 	
-	\renewcommand\cftsecaftersnum{:}	
-	\unnumchapter*{Table of Contents}
+	\renewcommand\cftsecaftersnum{:}
 	\vspace{-\baselineskip}\tableofcontents
 	\thispagestyle{fancy}
 	
@@ -259,7 +258,7 @@
 \let\oldtitlepage\titlepage
 \let\oldendtitlepage\endtitlepage
 \def\titlepage{
-	\oldtitlepage\pdfbookmark[1]{TITLE PAGE}{title}\center\MakeTextUppercase{\the\tptitle}\\
+	\oldtitlepage\pdfbookmark[1]{Title Page}{title}\center\MakeTextUppercase{\the\tptitle}\\
 }
 \def\endtitlepage{
 	\tpauthors\vfill\@date\endcenter\oldendtitlepage
@@ -295,27 +294,9 @@
 	\vspace*{2\baselineskip plus \baselineskip}
 	\mbox{\MakeTextUppercase{#1}}\\#2\\
 }
-\newcommand{\makeapprovalsheet}[1]{
-	\unnumchapter*{APPROVAL SHEET}
-	\hspace*{\parindent}This research paper entitled, \enquote{\MakeTextUppercase{\@title}} submitted by\printauthors{} has been examined and recommended for approval.
-
-	{\centering
-		\signatureline{\the\adviser} {Research Adviser}
-	}
-	\vspace{3\baselineskip}
-	
-	#1
-}
-
-\newcommand{\makeacknowledgement}[1]{
-	\unnumchapter*{ACKNOWLEDGEMENT}
-
-	#1
-}
 
 \newcommand{\keywords}[1]{\par\indent\doublespacing\textit{Keywords}: #1}
 \newcommand{\makeabstract}[1]{
-	\unnumchapter{ABSTRACT}
 	{\bfseries\printauthors}. Philippine Science High School -- Cordillera Administrative Region Campus, \ctuline{\@date}. \enquote{\MakeTextUppercase{\@title}} \\[2\baselineskip]
 	Adviser: {\bf \the\adviser}	\\
 	#1

@@ -73,7 +73,7 @@
 % TODO: If title page has revisions, edit this. Otherwise, delete completely.
 \renewcommand{\maketitle}{
 	\begin{titlepage}
-		\vspace*{12\baselineskip}
+		\vfill
 			
 		A research paper submitted to the\\
 		Faculty of the Philippine Science High School --\\
@@ -81,7 +81,7 @@
 		in fulfillment of the course requirements in\\
 		Science, Technology, Engineering and Mathematics Research\\
 			
-		\vspace*{10\baselineskip}
+		\vfill
 	\end{titlepage}
 } 
 % Delete up to here if title page has no revisions
@@ -89,10 +89,9 @@
 % TODO: If abstract has revisions, edit this (e.g. uncomment \keywords). Otherwise, delete completely.
 \makeatletter
 \renewcommand{\makeabstract}[1]{
-	\unnumchapter{ABSTRACT}
 	{\bfseries\printauthors}. Philippine Science High School -- Cordillera Administrative Region Campus, \ctuline{\@date}. \enquote{\MakeTextUppercase{\@title}} \\[2\baselineskip]
 	Adviser: {\bf \the\adviser}	\\
-	% Uncomment this to add indent to text
+	% Uncomment the following line to add indent to text
 	% \indent
 	#1
 	% \keywords{keywords; of; the; research}
@@ -105,51 +104,58 @@
 
 	\frontmatter
 
-	\makeapprovalsheet{
+	\unnumchapter*{APPROVAL SHEET}
+		\hspace*{\parindent}This research paper entitled, \enquote{\MakeTextUppercase{\@title}} submitted by\printauthors{} has been examined and recommended for approval.
+
+			{\centering
+				\signatureline{\the\adviser} {Research Adviser}
+			}
+		\vspace{3\baselineskip}
+
 		\noindent This research paper has been approved for submission in fulfillment of the requirements in Research \the\level.
 
 		{\centering
-			\signatureline{Jay Jay F. Manuel} {Research Teacher}
+		\signatureline{Jay Jay F. Manuel} {Research Teacher}
 		}
 
 		\vspace{3\baselineskip}
 
 		\noindent This is to certify that the research paper has been accepted.
 
-		{\centering
-			\begin{multicols}{2}
-				\signatureline{Marites P. Rivera} {Panel Member}
-				\columnbreak
-				\signatureline{Freda M. Wong} {Panel Member}
-			\end{multicols}
+			{\centering
+				\begin{multicols}{2}
+					\signatureline{Marites P. Rivera} {Panel Member}
+					\columnbreak
+					\signatureline{Freda M. Wong} {Panel Member}
+				\end{multicols}
 
-			\signatureline{Ricarido M. Saturay, \NoCaseChange{Jr.}} {Panel Member}
+				\signatureline{Ricarido M. Saturay, \NoCaseChange{Jr.}} {Panel Member}
 
-			\vfill
+				\vfill
 
-			\signatureline{Melba C. Patacsil} {CID Chief}
+				\signatureline{Melba C. Patacsil} {CID Chief}
 
-			\signatureline{Conrado C. Rotor, \NoCaseChange{Jr., Ph.D.}} {Campus Director}
-		}
-	}
+				\signatureline{Conrado C. Rotor, \NoCaseChange{Jr., Ph.D.}} {Campus Director}
+			}
 
-	% TODO: Acknowledgement
-	\makeacknowledgement{
+	\unnumchapter*{ACKNOWLEDGEMENT}
+		% TODO: Acknowledgement
 		\textquote[\cite{thecharlesworthgroupWhatIncludeYour2020}]{%
 			For academic theses, there is no right or wrong way to acknowledge people, and who you want to acknowledge is down to personal preference.
 			However, the common types of people authors acknowledge in their academic theses include: Their supervisor’s contributions, the research group (especially if the thesis in question is a master’s and the work is helped along by a PhD student), the support staff (laboratory technicians etc.), any students who undertook side projects with them (e.g. final year undergraduates, summer students, master’s students), administrative staff (there can be a lot of bureaucracy for thesis submissions), [\dots], their funding bodies, any collaboration with industry and the people they worked with at said establishment(s), friends, colleagues, and family%
 		}
-	}
 
-	% TODO: Abstract
-	% Do note that abstracts should not contain references.
-	\makeabstract{
-		According to \textcite{georgemasonuniversityWritingAbstract2020}, \blockquote{An abstract is a 150- to 250-word paragraph that provides readers with a quick overview of your essay or report and its organization. It should express your thesis (or central idea) and your key points; it should also suggest any implications or applications of the research you discuss in the paper.}
-		\textcite{georgemasonuniversityWritingAbstract2020} also states that the common abstract is divided into such: 25\% of space on the purpose and importance of the research (Introduction), 25\% of space on what was done (Methods), 35\% of space on what was found (Results), and 15\% of space on the implications of the research.
-	}
+	\unnumchapter{ABSTRACT}
+		% TODO: Abstract
+		% Do note that abstracts should not contain references.
+		\makeabstract{
+			According to \textcite{georgemasonuniversityWritingAbstract2020}, \blockquote{An abstract is a 150- to 250-word paragraph that provides readers with a quick overview of your essay or report and its organization. It should express your thesis (or central idea) and your key points; it should also suggest any implications or applications of the research you discuss in the paper.}
+			\textcite{georgemasonuniversityWritingAbstract2020} also states that the common abstract is divided into such: 25\% of space on the purpose and importance of the research (Introduction), 25\% of space on what was done (Methods), 35\% of space on what was found (Results), and 15\% of space on the implications of the research.
+		}
 
-	\contents
-	\listoflistings
+	\unnumchapter*{Table of Contents}
+		\contents
+		\listoflistings
 
 	\mainmatter
 
@@ -171,7 +177,7 @@
 			The \acl{sus} is used in evaluating the usability of a system.
 			\Acf{sus} is the full form of the \ac{sus}.
 
-			This paragraph is a demonstration of the features of the scientific name support via \texttt{glossaries}. 
+			This paragraph is a demonstration of the features of the scientific name support via \texttt{glossaries}.
 			Note that sentences beginning with scientific names should have the scientific names in full.
 			For example, the \At.
 			Plant material composes \At.
