@@ -95,6 +95,7 @@
 }
 
 \RequirePackage{hyperref}
+\RequirePackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
 \RequirePackage{xurl}
 
 \hypersetup{
